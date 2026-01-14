@@ -394,6 +394,12 @@
            font-size: 12.5px;
            line-height: 1.8;
          }
+     
+         /* =========================
+            TAMBAHAN: Share dock (mobile) styling
+            ========================= */
+         #shareDockMobile .share-wrap{ margin:0; }
+         #shareDockMobile .share-note{ display:block; margin-top:6px; }
        </style>
      </head>
      
@@ -485,7 +491,7 @@
      
                <p class="post-lead" id="postLead"></p>
      
-               <!-- Share buttons -->
+               <!-- Share buttons (desktop akan tetap di sini, mobile akan dipindah via JS) -->
                <div class="share-wrap" aria-label="Share article">
                  <button class="share-btn" type="button" id="shareWA" title="Share WhatsApp"><i class="bi bi-whatsapp"></i> WhatsApp</button>
                  <button class="share-btn" type="button" id="shareFB" title="Share Facebook"><i class="bi bi-facebook"></i> Facebook</button>
@@ -535,6 +541,15 @@
                <div class="mt-4" id="faqWrap" style="display:none;">
                  <h2 class="sec-h">FAQ</h2>
                  <div class="accordion accordion-dark" id="faqAcc"></div>
+               </div>
+     
+               <!-- =========================
+                    TAMBAHAN: Share dock (mobile) - posisinya di bawah artikel / sebelum profil penulis
+                    ========================= -->
+               <div class="mt-4" id="shareDockMobile" style="display:none;">
+                 <div class="soft-line mb-3"></div>
+                 <h2 class="sec-h mb-2" style="font-size:18px;">Bagikan Artikel</h2>
+                 <div id="shareDockSlot"></div>
                </div>
      
                <!-- Profil penulis -->
@@ -791,7 +806,6 @@
                ]
              },
      
-             // ======= Placeholder (biar link dari blog.html tidak blank) =======
              "the-rise-of-smart-homes": {
                title: "The Rise of Smart Homes: How Technology Is Reshaping Everyday Living",
                description: "Teknologi rumah pintar yang benar-benar berguna, cara memilih fitur, dan menghitung ROI.",
@@ -816,6 +830,7 @@
                readAlso: [],
                related: []
              },
+     
              "sustainable-living": {
                title: "Sustainable Living: How Eco-Friendly Homes Are Shaping the Future",
                description: "Strategi rumah hemat energi: desain pasif, material, dan kebiasaan yang menekan biaya jangka panjang.",
@@ -840,6 +855,7 @@
                readAlso: [],
                related: []
              },
+     
              "real-estate-remains-resilient": {
                title: "Why Real Estate Remains Resilient",
                description: "Mengapa properti sering tahan banting dan bagaimana membaca peluangnya secara rasional.",
@@ -865,7 +881,6 @@
                related: []
              },
      
-             // slug dari blog.html kamu ini, aku bikin placeholder biar tidak error
              "real-estate-smart-investment": {
                title: "Getting Started in Real Estate: A Beginner’s Guide to Smart Investment",
                description: "Panduan pemula real estate: mindset, langkah awal, dan cara pilih aset yang rasional.",
@@ -890,6 +905,7 @@
                readAlso: [],
                related: []
              },
+     
              "vacation-rental-properties": {
                title: "Vacation Rental Properties: How to Turn Getaways Into Profitable Assets",
                description: "Cara melihat peluang vacation rental: demand, operasional, dan strategi pricing.",
@@ -909,6 +925,95 @@
                  <p>Konten placeholder—isi nanti sesuai kebutuhan.</p>
                  <h2>Conclusion</h2>
                  <p>Bangun sistem: cleaning, check-in, dan pricing.</p>
+               `,
+               faq: [],
+               readAlso: [],
+               related: []
+             },
+     
+             /* =========================
+                TAMBAHAN: 3 ARTIKEL BARU (slug harus sama dengan blog.html)
+                ========================= */
+             "property-market-cycles": {
+               title: "Property Market Cycles: Cara Membaca Naik-Turun Harga Secara Tenang",
+               description: "Pahami siklus pasar properti, indikator sederhana, dan cara ambil keputusan tanpa panik.",
+               datePublished: "2025-06-18",
+               dateModified: "2025-06-18",
+               readingTime: "6 min read",
+               tag: "Basics",
+               hero: {
+                 img: "https://images.unsplash.com/photo-1454165205744-3b78555e5572?auto=format&fit=crop&w=1800&q=80",
+                 imgOg: "https://images.unsplash.com/photo-1454165205744-3b78555e5572?auto=format&fit=crop&w=1200&q=80",
+                 alt: "Grafik dan dokumen analisis pasar",
+                 cap: "Foto: Membaca data pasar membantu keputusan tetap rasional."
+               },
+               lead: "Harga properti bergerak dalam pola. Dengan memahami siklus, kamu bisa lebih tenang menentukan timing, strategi, dan mitigasi risiko.",
+               contentHtml: `
+                 <h2>Apa Itu Market Cycle?</h2>
+                 <p>Siklus pasar biasanya bergerak dari pemulihan, ekspansi, oversupply, lalu koreksi. Kuncinya adalah memahami fase, bukan menebak puncak.</p>
+                 <h2>Indikator yang Bisa Kamu Pantau</h2>
+                 <ul>
+                   <li>Permintaan (inquiry, viewing, transaksi)</li>
+                   <li>Supply (stok listing, proyek baru)</li>
+                   <li>Harga sewa & vacancy</li>
+                   <li>Suku bunga & akses kredit</li>
+                 </ul>
+                 <h2>Kesimpulan</h2>
+                 <p>Jangan terpaku “harga pasti naik”. Pegang data sederhana dan rancang strategi sesuai fase.</p>
+               `,
+               faq: [],
+               readAlso: [],
+               related: []
+             },
+     
+             "rental-yield-vs-cap-rate": {
+               title: "Rental Yield vs Cap Rate: Mana yang Lebih Relevan untuk Investor Pemula?",
+               description: "Bedakan rental yield dan cap rate, kapan dipakai, dan contoh hitung singkat.",
+               datePublished: "2025-06-20",
+               dateModified: "2025-06-20",
+               readingTime: "7 min read",
+               tag: "Investment",
+               hero: {
+                 img: "https://images.unsplash.com/photo-1554224154-22dec7ec8818?auto=format&fit=crop&w=1800&q=80",
+                 imgOg: "https://images.unsplash.com/photo-1554224154-22dec7ec8818?auto=format&fit=crop&w=1200&q=80",
+                 alt: "Perhitungan finansial di meja kerja",
+                 cap: "Foto: Angka yang benar membantu keputusan investasi lebih disiplin."
+               },
+               lead: "Banyak investor pemula hanya melihat 'yield' tanpa memasukkan biaya. Cap rate membantu melihat gambaran lebih realistis—ini cara membedakannya.",
+               contentHtml: `
+                 <h2>Rental Yield: Cara Cepat</h2>
+                 <p>Rental yield biasanya menghitung sewa tahunan dibanding harga beli. Cocok untuk screening awal.</p>
+                 <h2>Cap Rate: Lebih Realistis</h2>
+                 <p>Cap rate memakai NOI (net operating income), yaitu sewa dikurangi biaya operasional. Ini lebih mendekati performa nyata.</p>
+                 <h2>Kesimpulan</h2>
+                 <p>Gunakan yield untuk filter awal, lalu pakai cap rate untuk keputusan final.</p>
+               `,
+               faq: [],
+               readAlso: [],
+               related: []
+             },
+     
+             "interior-layout-small-space": {
+               title: "Interior Layout for Small Space: 9 Prinsip Biar Apartemen Kecil Terasa Lega",
+               description: "Zoning, pencahayaan, storage, dan trik layout yang benar-benar terasa efeknya.",
+               datePublished: "2025-06-22",
+               dateModified: "2025-06-22",
+               readingTime: "6 min read",
+               tag: "Design",
+               hero: {
+                 img: "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1800&q=80",
+                 imgOg: "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1200&q=80",
+                 alt: "Interior apartemen kecil dengan layout rapi",
+                 cap: "Foto: Layout dan storage yang tepat bikin ruang kecil terasa lapang."
+               },
+               lead: "Ruang kecil tidak harus terasa sempit. Dengan zoning yang jelas, storage pintar, dan pencahayaan yang benar, kamu bisa dapat rasa lega tanpa renovasi besar.",
+               contentHtml: `
+                 <h2>Mulai dari Zoning</h2>
+                 <p>Pisahkan area tidur, kerja, dan santai dengan cara halus: karpet, lighting, atau rak terbuka.</p>
+                 <h2>Gunakan Storage Vertikal</h2>
+                 <p>Manfaatkan dinding, kabinet tinggi, dan under-bed storage untuk mengurangi clutter.</p>
+                 <h2>Kesimpulan</h2>
+                 <p>Ruang kecil menang di disiplin: minim clutter, layout rapi, dan pencahayaan berlapis.</p>
                `,
                faq: [],
                readAlso: [],
@@ -953,7 +1058,6 @@
      
            /* =========================
               TAMBAHAN: FALLBACK BIAR "BACA JUGA" & "ARTIKEL TERKAIT" TIDAK KOSONG
-              (HANYA MENAMBAHKAN, TIDAK MENGURANGI KODE ASLI)
               ========================= */
            function pickFallbackPosts(currentSlug, count, preferTag){
              const list = Object.entries(POSTS)
@@ -1290,6 +1394,46 @@
                setTimeout(()=> note.textContent = '', 2500);
              }
            });
+     
+           /* =========================
+              TAMBAHAN: pindahkan share buttons ke bawah artikel saat mobile
+              (tanpa duplikasi, jadi ID aman)
+              ========================= */
+           const shareWrapEl = document.querySelector('.share-wrap');
+           const shareDockMobile = document.getElementById('shareDockMobile');
+           const shareDockSlot = document.getElementById('shareDockSlot');
+     
+           const shareOriginParent = shareWrapEl ? shareWrapEl.parentElement : null;
+           const shareOriginNext = shareWrapEl ? shareWrapEl.nextElementSibling : null;
+     
+           function placeShareByViewport(){
+             if(!shareWrapEl || !shareDockMobile || !shareDockSlot || !shareOriginParent) return;
+     
+             const isMobile = window.matchMedia('(max-width: 991.98px)').matches;
+     
+             if(isMobile){
+               shareDockMobile.style.display = "";
+               if(shareWrapEl.parentElement !== shareDockSlot){
+                 shareDockSlot.appendChild(shareWrapEl);
+               }
+             } else {
+               shareDockMobile.style.display = "none";
+               if(shareWrapEl.parentElement !== shareOriginParent){
+                 if(shareOriginNext){
+                   shareOriginParent.insertBefore(shareWrapEl, shareOriginNext);
+                 } else {
+                   shareOriginParent.appendChild(shareWrapEl);
+                 }
+               }
+             }
+           }
+     
+           placeShareByViewport();
+           window.addEventListener('resize', placeShareByViewport, { passive:true });
+           window.addEventListener('orientationchange', placeShareByViewport, { passive:true });
+           /* =========================
+              END TAMBAHAN
+              ========================= */
      
            // =========================
            // 9) CTA WhatsApp
