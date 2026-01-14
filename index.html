@@ -1,1066 +1,721 @@
-<!doctype html>
-<html lang="id">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-
-  <title>Kurva — Modern Spaces</title>
-  <meta name="description" content="Kurva membangun ruang modern yang fungsional, elegan, dan tahan lama—dari hunian hingga komersial, dengan eksekusi presisi." />
-
-  <!-- Author + Keywords -->
-  <meta name="author" content="Muhammad Affizar Ibrahim Alkautsar" />
-  <meta name="keywords" content="Muhammad Affizar Ibrahim Alkautsar, Muhammad Affizar Ibrahim Alkautsar Alkautsar, Kurva, arsitektur modern, interior, pembangunan, desain rumah, konstruksi, project development" />
-
-  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
-  <link rel="canonical" href="https://example.com/" />
-
-  <meta name="theme-color" content="#000000" />
-  <meta name="color-scheme" content="dark light" />
-
-  <!-- Performance hints -->
-  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
-  <link rel="dns-prefetch" href="https://cdn.jsdelivr.net" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
-  <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
-  <link rel="preconnect" href="https://images.unsplash.com" crossorigin />
-  <link rel="dns-prefetch" href="https://images.unsplash.com" />
-
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
-
-  <!-- Open Graph -->
-  <meta property="og:site_name" content="Kurva" />
-  <meta property="og:title" content="Kurva — Modern Spaces" />
-  <meta property="og:description" content="Kurva membangun ruang modern yang fungsional, elegan, dan tahan lama—dari hunian hingga komersial, dengan eksekusi presisi." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://example.com/" />
-  <meta property="og:image" content="https://images.unsplash.com/photo-1523755231516-e43fd2e8dca5?auto=format&fit=crop&w=1200&q=80" />
-  <meta property="og:image:width" content="1200" />
-  <meta property="og:image:height" content="630" />
-  <meta property="og:locale" content="id_ID" />
-
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Kurva — Modern Spaces" />
-  <meta name="twitter:description" content="Kurva membangun ruang modern yang fungsional, elegan, dan tahan lama—dari hunian hingga komersial, dengan eksekusi presisi." />
-  <meta name="twitter:image" content="https://images.unsplash.com/photo-1523755231516-e43fd2e8dca5?auto=format&fit=crop&w=1200&q=80" />
-
-  <!-- Favicon pack -->
-  <link rel="icon" href="/favicon.ico" sizes="any" />
-  <link rel="icon" href="/assets/favicons/favicon.svg" type="image/svg+xml" />
-  <link rel="apple-touch-icon" href="/assets/favicons/apple-touch-icon.png" />
-  <link rel="manifest" href="/site.webmanifest" />
-  <meta name="apple-mobile-web-app-title" content="Kurva" />
-  <meta name="application-name" content="Kurva" />
-  <meta name="msapplication-TileColor" content="#000000" />
-
-  <!-- Bootstrap CSS -->
-  <link
-    rel="stylesheet"
-    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-    crossorigin="anonymous"
-  />
-
-  <!-- Icons -->
-  <link
-    rel="stylesheet"
-    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
-    crossorigin="anonymous"
-  />
-
-  <!-- Structured Data -->
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"WebSite",
-    "name":"Kurva",
-    "url":"https://example.com/",
-    "inLanguage":"id-ID",
-    "publisher":{
-      "@type":"Organization",
-      "name":"Kurva",
-      "url":"https://example.com/",
-      "logo":{"@type":"ImageObject","url":"https://example.com/assets/brand/logo.png"}
-    },
-    "author":{"@type":"Person","name":"Muhammad Affizar Ibrahim Alkautsar"}
-  }
-  </script>
-
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"Organization",
-    "name":"Kurva",
-    "url":"https://example.com/",
-    "founder":{"@type":"Person","name":"Muhammad Affizar Ibrahim Alkautsar"},
-    "sameAs":[]
-  }
-  </script>
-
-  <!-- Global theme (dark) -->
-  <style>
-    :root{
-      --bg:#000;
-      --text:rgba(255,255,255,.92);
-      --muted:rgba(255,255,255,.62);
-      --muted2:rgba(255,255,255,.42);
-      --line:rgba(255,255,255,.10);
-      --line2:rgba(255,255,255,.16);
-      --panel:rgba(255,255,255,.05);
-      --panel2:rgba(255,255,255,.07);
-      --shadow:0 18px 50px rgba(0,0,0,.55);
-      --r-xl:22px;
-      --r-lg:18px;
-      --r-md:14px;
-      --ease:cubic-bezier(.2,.8,.2,1);
-      --ease2:cubic-bezier(.16,1,.3,1);
-      --font-ui:"Inter",system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
-      --font-display:"Montserrat",system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
-    }
-    html{ scroll-behavior:smooth; }
-    body{
-      font-family:var(--font-ui);
-      background:var(--bg);
-      color:var(--text);
-      overflow-x:hidden;
-      margin:0;
-    }
-    a{ color:inherit; text-decoration:none; }
-    .container{ max-width:1180px; }
-    .soft-line{ border-top:1px solid var(--line); }
-    .glass{
-      background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
-      border:1px solid var(--line);
-      border-radius:var(--r-xl);
-      box-shadow:var(--shadow);
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
-    }
-    .btn-pill{
-      border-radius:999px;
-      padding:.65rem 1rem;
-      border:1px solid var(--line2);
-      background:rgba(255,255,255,.06);
-      color:var(--text);
-      transition: transform .2s var(--ease), background .2s var(--ease), border-color .2s var(--ease);
-    }
-    .btn-pill:hover{ transform: translateY(-1px); background:rgba(255,255,255,.09); border-color:rgba(255,255,255,.22); }
-    .btn-pill:focus{ outline:none; box-shadow:0 0 0 .25rem rgba(255,255,255,.12); }
-
-    .k-brand{
-      display:flex; align-items:center; gap:.6rem;
-      letter-spacing:.2px;
-      font-family:var(--font-display);
-      font-weight:400;
-    }
-    .k-mark{
-      width:18px; height:18px; border-radius:6px;
-      border:1px solid rgba(255,255,255,.24);
-      background: radial-gradient(circle at 30% 30%, rgba(255,255,255,.18), rgba(255,255,255,.02));
-      box-shadow:0 0 0 1px rgba(255,255,255,.06) inset;
-    }
-
-    .reveal{ opacity:0; transform: translateY(14px); transition: opacity .8s var(--ease2), transform .8s var(--ease2); }
-    .reveal.is-in{ opacity:1; transform:none; }
-
-    ::selection{ background:rgba(255,255,255,.22); color:#fff; }
-
-    header{ margin-top:0 !important; }
-    body{ padding-top:0 !important; }
-
-    /* HERO RIGHT: grid image boxes */
-    .hero-grid{
-      display:grid;
-      grid-template-columns: 1.05fr .95fr;
-      grid-auto-rows: 1fr;
-      gap:12px;
-    }
-    .hero-grid .hg{
-      position:relative;
-      border-radius:18px;
-      overflow:hidden;
-      border:1px solid rgba(255,255,255,.12);
-      background: rgba(255,255,255,.04);
-      transform: translateZ(0);
-      transition: transform .25s var(--ease), border-color .25s var(--ease), box-shadow .25s var(--ease);
-      min-height: 140px;
-    }
-    .hero-grid .hg:hover{
-      transform: translateY(-2px);
-      border-color: rgba(255,255,255,.22);
-      box-shadow: 0 18px 50px rgba(0,0,0,.55);
-    }
-    .hero-grid .hg img{
-      width:100%;
-      height:100%;
-      object-fit:cover;
-      display:block;
-      filter:saturate(.95) contrast(1.02);
-    }
-    .hero-grid .hg::after{
-      content:"";
-      position:absolute; inset:0;
-      background: radial-gradient(circle at 35% 20%, rgba(255,255,255,.10), rgba(0,0,0,0) 55%),
-                  linear-gradient(180deg, rgba(0,0,0,.08), rgba(0,0,0,.35));
-      pointer-events:none;
-    }
-    .hero-grid .hg.big{
-      grid-row: span 2;
-      min-height: 320px;
-    }
-    .hero-grid .hg .tag{
-      position:absolute; left:12px; bottom:12px;
-      font-size:.78rem;
-      color:rgba(255,255,255,.85);
-      padding:.35rem .6rem;
-      border-radius:999px;
-      border:1px solid rgba(255,255,255,.18);
-      background: rgba(0,0,0,.35);
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
-    }
-  </style>
-</head>
-
-<body>
-
-  <!-- Top bar -->
-  <header class="position-sticky top-0 z-3" style="background:rgba(0,0,0,.72); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom:1px solid rgba(255,255,255,.08);">
-    <div class="container py-3 d-flex align-items-center justify-content-between">
-      <a href="#home" class="k-brand">
-        <span class="k-mark" aria-hidden="true"></span>
-        <span>Kurva</span>
-      </a>
-
-      <div class="d-flex align-items-center gap-2">
-        <a href="#contact" class="btn btn-pill d-none d-md-inline-flex">Contact Us</a>
-        <button id="menuBtn" class="btn btn-pill d-inline-flex align-items-center gap-2" type="button" aria-label="Open menu" aria-controls="overlayNav" aria-expanded="false">
-          <span class="d-none d-sm-inline">Menu</span>
-          <i class="bi bi-list fs-5"></i>
-        </button>
-      </div>
-    </div>
-  </header>
-
-  <!-- Overlay Navbar -->
-  <div id="overlayNav" class="overlay-nav" aria-hidden="true">
-    <div class="container h-100 d-flex flex-column">
-      <div class="d-flex align-items-center justify-content-between py-4">
-        <a href="#home" class="k-brand" data-close>
-          <span class="k-mark" aria-hidden="true"></span>
-          <span>Kurva</span>
-        </a>
-        <div class="d-flex align-items-center gap-2">
-          <a href="#contact" class="btn btn-pill">Contact Us</a>
-          <button id="closeBtn" class="btn btn-pill" type="button" aria-label="Close menu" data-close>
-            <i class="bi bi-x-lg"></i>
-          </button>
-        </div>
-      </div>
-
-      <div class="flex-grow-1 d-flex align-items-center justify-content-center">
-        <nav class="text-center overlay-links">
-          <a class="overlay-link" href="index.html" data-close>Home</a>
-          <a class="overlay-link" href="projects.html" data-close>Our Projects</a>
-          <a class="overlay-link" href="about.html" data-close>About Us</a>
-          <a class="overlay-link" href="blog.html" data-close>Blog</a>
-        </nav>
-      </div>
-
-      <div class="pb-4 text-center text-white-50 small">
-        <span>© <span id="yearNow"></span> Kurva. Crafted for performance & SEO.</span>
-      </div>
-    </div>
-  </div>
-
-  <style>
-    .overlay-nav{
-      position:fixed; inset:0;
-      background:rgba(0,0,0,.92);
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
-      opacity:0; pointer-events:none;
-      transition: opacity .28s var(--ease);
-      z-index: 9999;
-    }
-    .overlay-nav.open{ opacity:1; pointer-events:auto; }
-    .overlay-links{
-      display:flex; flex-direction:column; gap:34px;
-      font-family: var(--font-display);
-      letter-spacing:.4px;
-    }
-    .overlay-link{
-      font-size: clamp(34px, 5vw, 56px);
-      font-weight:300;
-      color: rgba(255,255,255,.90);
-      transition: transform .22s var(--ease), opacity .22s var(--ease);
-    }
-    .overlay-link:hover{ transform: translateY(-2px); opacity: .95; }
-  </style>
-
-  <!-- HERO -->
-  <main id="home" class="pt-0">
-    <section class="container py-5" style="padding-top:28px !important;">
-      <div class="row g-4 align-items-stretch">
-        <div class="col-lg-7">
-          <div class="glass p-4 p-md-5 h-100 position-relative overflow-hidden">
-            <div class="d-flex flex-wrap gap-2 align-items-center mb-3">
-              <span class="badge rounded-pill text-bg-dark" style="border:1px solid rgba(255,255,255,.16); background:rgba(255,255,255,.06) !important;">
-                <i class="bi bi-stars me-1"></i> Modern Architecture Studio
-              </span>
-              <span class="badge rounded-pill text-bg-dark" style="border:1px solid rgba(255,255,255,.16); background:rgba(255,255,255,.06) !important;">
-                <i class="bi bi-lightning-charge me-1"></i> Optimized Pagespeed
-              </span>
-            </div>
-
-            <h1 class="display-5 mb-3" style="font-family:var(--font-display); font-weight:300; letter-spacing:.2px;">
-              Shaping modern spaces for life and legacy.
-            </h1>
-            <p class="lead" style="color:var(--muted); max-width:58ch;">
-              Kurva menggabungkan estetika minimal, material premium, dan eksekusi presisi untuk menghadirkan ruang yang terasa “tenang”, kuat, dan fungsional.
-            </p>
-
-            <div class="d-flex flex-wrap gap-2 mt-4">
-              <a class="btn btn-pill" href="#projects"><i class="bi bi-grid-1x2 me-1"></i> Explore Projects</a>
-              <a class="btn btn-pill" href="#contact"><i class="bi bi-chat-dots me-1"></i> Get a Proposal</a>
-              <a class="btn btn-pill" href="#faq"><i class="bi bi-question-circle me-1"></i> FAQ</a>
-            </div>
-
-            <div class="soft-line my-4"></div>
-
-            <div class="row g-3">
-              <div class="col-6 col-md-4">
-                <div class="p-3 rounded-4" style="background:rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.10);">
-                  <div class="small text-white-50">Projects</div>
-                  <div class="fs-4" style="font-family:var(--font-display); font-weight:300;">48+</div>
-                </div>
-              </div>
-              <div class="col-6 col-md-4">
-                <div class="p-3 rounded-4" style="background:rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.10);">
-                  <div class="small text-white-50">Client Rating</div>
-                  <div class="fs-4" style="font-family:var(--font-display); font-weight:300;">4.9/5</div>
-                </div>
-              </div>
-              <div class="col-12 col-md-4">
-                <div class="p-3 rounded-4" style="background:rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.10);">
-                  <div class="small text-white-50">Delivery</div>
-                  <div class="fs-4" style="font-family:var(--font-display); font-weight:300;">On-time</div>
-                </div>
-              </div>
-            </div>
-
-            <div class="hero-glow" aria-hidden="true"></div>
-          </div>
-        </div>
-
-        <!-- ✅ HERO KANAN: Grid Box Gambar -->
-        <div class="col-lg-5">
-          <div class="glass p-3 p-md-4 h-100 overflow-hidden">
-            <div class="hero-grid">
-              <!-- Big tile -->
-              <a class="hg big" href="#projects" aria-label="View featured concept">
-                <img
-                  src="https://images.unsplash.com/photo-1496307653780-42ee777d4833?auto=format&fit=crop&w=1200&q=80"
-                  alt="Modern glass building"
-                  fetchpriority="high"
-                  decoding="async"
-                />
-                <span class="tag"><i class="bi bi-stars me-1"></i> Featured</span>
-              </a>
-
-              <!-- Small tile 1 -->
-              <a class="hg" href="#projects" aria-label="View architecture detail">
-                <img
-                  src="https://images.unsplash.com/photo-1449247613801-ab06418e2861?auto=format&fit=crop&w=1200&q=80"
-                  alt="Modern exterior at dusk"
-                  loading="lazy"
-                  decoding="async"
-                />
-                <span class="tag"><i class="bi bi-building me-1"></i> Exterior</span>
-              </a>
-
-              <!-- Small tile 2 -->
-              <a class="hg" href="#about" aria-label="View interior inspiration">
-                <img
-                  src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=1200&q=80"
-                  alt="Minimal interior"
-                  loading="lazy"
-                  decoding="async"
-                />
-                <span class="tag"><i class="bi bi-lamp me-1"></i> Interior</span>
-              </a>
-            </div>
-
-            <div class="d-flex justify-content-between align-items-center mt-3">
-              <div>
-                <div class="small text-white-50">Highlights</div>
-                <div class="fw-medium">Grid Preview Gallery</div>
-              </div>
-              <a class="btn btn-pill" href="#projects" aria-label="View featured developments">
-                View <i class="bi bi-arrow-right ms-1"></i>
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="mt-5 pt-2 reveal">
-        <div class="soft-line mb-4"></div>
-        <div class="marquee">
-          <div class="marquee-track">
-            <span>Kurva — Minimal • Modern • Crafted • </span>
-            <span>Kurva — Minimal • Modern • Crafted • </span>
-            <span>Kurva — Minimal • Modern • Crafted • </span>
-            <span>Kurva — Minimal • Modern • Crafted • </span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <style>
-      .hero-glow{
-        position:absolute; inset:auto -30% -50% -30%;
-        height:520px;
-        background: radial-gradient(circle at 50% 30%, rgba(255,255,255,.12), rgba(255,255,255,0) 62%);
-        filter: blur(2px);
-        pointer-events:none;
-      }
-      .marquee{
-        border:1px solid rgba(255,255,255,.10);
-        border-radius:999px;
-        overflow:hidden;
-        background:rgba(255,255,255,.03);
-      }
-      .marquee-track{
-        display:flex;
-        white-space:nowrap;
-        padding:.75rem 0;
-        animation: scroll 18s linear infinite;
-        font-family:var(--font-display);
-        font-weight:300;
-        color:rgba(255,255,255,.75);
-        letter-spacing:.8px;
-      }
-      .marquee-track span{
-        padding:0 1.2rem;
-        text-transform:uppercase;
-      }
-      @keyframes scroll{
-        from{ transform:translateX(0); }
-        to{ transform:translateX(-50%); }
-      }
-    </style>
-
-    <!-- BUILT WITH PURPOSE -->
-    <section id="about" class="container py-5">
-      <div class="row g-4 align-items-start">
-        <div class="col-lg-6">
-          <div class="reveal">
-            <div class="small text-white-50 mb-2">Built with Purpose</div>
-            <h2 class="mb-3" style="font-family:var(--font-display); font-weight:300;">
-              A philosophy of calm, clarity, and craft.
-            </h2>
-            <p style="color:var(--muted); max-width:60ch;">
-              Kurva berangkat dari pendekatan desain yang “quiet luxury”: garis bersih, proporsi presisi, material jujur, dan detail yang terasa halus tanpa berlebihan.
-            </p>
-            <div class="d-flex flex-wrap gap-2 mt-3">
-              <span class="badge rounded-pill text-bg-dark" style="border:1px solid rgba(255,255,255,.16); background:rgba(255,255,255,.06) !important;">Design system</span>
-              <span class="badge rounded-pill text-bg-dark" style="border:1px solid rgba(255,255,255,.16); background:rgba(255,255,255,.06) !important;">Material-first</span>
-              <span class="badge rounded-pill text-bg-dark" style="border:1px solid rgba(255,255,255,.16); background:rgba(255,255,255,.06) !important;">Execution ready</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-6">
-          <div class="glass p-3 p-md-4 reveal">
-            <div class="row g-3">
-              <div class="col-12">
-                <div class="ratio ratio-21x9 rounded-4 overflow-hidden" style="border:1px solid rgba(255,255,255,.10);">
-                  <img
-                    src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=1600&q=80"
-                    alt="Minimal modern interior"
-                    class="w-100 h-100 object-fit-cover"
-                    loading="lazy"
-                    decoding="async"
-                  />
-                </div>
-              </div>
-              <div class="col-6">
-                <div class="ratio ratio-1x1 rounded-4 overflow-hidden" style="border:1px solid rgba(255,255,255,.10);">
-                  <img
-                    src="https://images.unsplash.com/photo-1481277542470-605612bd2d61?auto=format&fit=crop&w=1200&q=80"
-                    alt="Concrete detail"
-                    class="w-100 h-100 object-fit-cover"
-                    loading="lazy"
-                    decoding="async"
-                  />
-                </div>
-              </div>
-              <div class="col-6">
-                <div class="ratio ratio-1x1 rounded-4 overflow-hidden" style="border:1px solid rgba(255,255,255,.10);">
-                  <img
-                    src="https://images.unsplash.com/photo-1449247709967-d4461a6a6103?auto=format&fit=crop&w=1200&q=80"
-                    alt="Modern facade"
-                    class="w-100 h-100 object-fit-cover"
-                    loading="lazy"
-                    decoding="async"
-                  />
-                </div>
-              </div>
-            </div>
-            <div class="mt-3 small text-white-50">
-              Curated references from Unsplash (fixed URLs to prevent blank images).
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- FEATURED DEVELOPMENTS -->
-    <section id="projects" class="container py-5">
-      <div class="d-flex flex-wrap align-items-end justify-content-between gap-3 mb-4 reveal">
-        <div>
-          <div class="small text-white-50 mb-2">Featured Developments</div>
-          <h2 class="mb-0" style="font-family:var(--font-display); font-weight:300;">Recent work, built to last.</h2>
-        </div>
-        <a class="btn btn-pill" href="#contact"><i class="bi bi-envelope me-1"></i> Request Portfolio</a>
-      </div>
-
-      <div class="row g-4">
-        <div class="col-md-6 col-lg-4">
-          <article class="glass p-3 h-100 reveal">
-            <div class="ratio ratio-4x3 rounded-4 overflow-hidden" style="border:1px solid rgba(255,255,255,.10);">
-              <img
-                src="https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=1200&q=80"
-                alt="Modern house exterior"
-                class="w-100 h-100 object-fit-cover"
-                loading="lazy"
-                decoding="async"
-              />
-            </div>
-            <div class="pt-3">
-              <div class="d-flex align-items-center justify-content-between gap-2">
-                <h3 class="h5 mb-0" style="font-family:var(--font-display); font-weight:300;">Atria Residence</h3>
-                <span class="badge rounded-pill text-bg-dark" style="border:1px solid rgba(255,255,255,.16); background:rgba(255,255,255,.06) !important;">2026</span>
-              </div>
-              <p class="mt-2 mb-0" style="color:var(--muted);">
-                Hunian minimal dengan permainan cahaya, void, dan bukaan lebar.
-              </p>
-            </div>
-          </article>
-        </div>
-
-        <div class="col-md-6 col-lg-4">
-          <article class="glass p-3 h-100 reveal">
-            <div class="ratio ratio-4x3 rounded-4 overflow-hidden" style="border:1px solid rgba(255,255,255,.10);">
-              <img
-                src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1200&q=80"
-                alt="Modern office building"
-                class="w-100 h-100 object-fit-cover"
-                loading="lazy"
-                decoding="async"
-              />
-            </div>
-            <div class="pt-3">
-              <div class="d-flex align-items-center justify-content-between gap-2">
-                <h3 class="h5 mb-0" style="font-family:var(--font-display); font-weight:300;">Lumina Offices</h3>
-                <span class="badge rounded-pill text-bg-dark" style="border:1px solid rgba(255,255,255,.16); background:rgba(255,255,255,.06) !important;">Commercial</span>
-              </div>
-              <p class="mt-2 mb-0" style="color:var(--muted);">
-                Fasad kaca berirama untuk efisiensi cahaya dan identitas brand.
-              </p>
-            </div>
-          </article>
-        </div>
-
-        <div class="col-md-6 col-lg-4">
-          <article class="glass p-3 h-100 reveal">
-            <div class="ratio ratio-4x3 rounded-4 overflow-hidden" style="border:1px solid rgba(255,255,255,.10);">
-              <img
-                src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1200&q=80"
-                alt="Modern lobby interior"
-                class="w-100 h-100 object-fit-cover"
-                loading="lazy"
-                decoding="async"
-              />
-            </div>
-            <div class="pt-3">
-              <div class="d-flex align-items-center justify-content-between gap-2">
-                <h3 class="h5 mb-0" style="font-family:var(--font-display); font-weight:300;">Nexus Lobby</h3>
-                <span class="badge rounded-pill text-bg-dark" style="border:1px solid rgba(255,255,255,.16); background:rgba(255,255,255,.06) !important;">Interior</span>
-              </div>
-              <p class="mt-2 mb-0" style="color:var(--muted);">
-                Material natural + lighting halus untuk pengalaman masuk yang premium.
-              </p>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <style>
-      #projects article{ transition: transform .25s var(--ease), border-color .25s var(--ease); }
-      #projects article:hover{ transform: translateY(-3px); }
-      .bi{ opacity:.92; }
-    </style>
-
-    <!-- WHAT SETS US APART -->
-    <section class="container py-5">
-      <div class="row g-4 align-items-stretch">
-        <div class="col-lg-5">
-          <div class="reveal">
-            <div class="small text-white-50 mb-2">What Sets Us Apart</div>
-            <h2 style="font-family:var(--font-display); font-weight:300;">Detail-driven. Systematic. Reliable.</h2>
-            <p style="color:var(--muted); max-width:60ch;">
-              Dari konsep sampai eksekusi, Kurva memastikan kualitas tetap konsisten—dengan dokumentasi rapi, komunikasi jelas, dan kontrol mutu yang disiplin.
-            </p>
-          </div>
-        </div>
-        <div class="col-lg-7">
-          <div class="row g-3">
-            <div class="col-md-6">
-              <div class="glass p-4 h-100 reveal">
-                <div class="d-flex align-items-center gap-2 mb-2">
-                  <i class="bi bi-check2-circle"></i>
-                  <div class="fw-medium">Blueprint-ready</div>
-                </div>
-                <div style="color:var(--muted);">Dokumen teknis, detail material, dan estimasi biaya yang dapat ditindaklanjuti.</div>
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="glass p-4 h-100 reveal">
-                <div class="d-flex align-items-center gap-2 mb-2">
-                  <i class="bi bi-lightning"></i>
-                  <div class="fw-medium">Fast iteration</div>
-                </div>
-                <div style="color:var(--muted);">Revisi cepat dengan sistem komponen & guideline visual yang konsisten.</div>
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="glass p-4 h-100 reveal">
-                <div class="d-flex align-items-center gap-2 mb-2">
-                  <i class="bi bi-shield-check"></i>
-                  <div class="fw-medium">Quality control</div>
-                </div>
-                <div style="color:var(--muted);">Checklist eksekusi + inspeksi berkala agar hasil rapi dan presisi.</div>
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="glass p-4 h-100 reveal">
-                <div class="d-flex align-items-center gap-2 mb-2">
-                  <i class="bi bi-chat-square-dots"></i>
-                  <div class="fw-medium">Clear communication</div>
-                </div>
-                <div style="color:var(--muted);">Update progres terjadwal, satu kanal komunikasi, keputusan terdokumentasi.</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- TESTIMONIALS -->
-    <section class="container py-5">
-      <div class="d-flex flex-wrap align-items-end justify-content-between gap-3 mb-4 reveal">
-        <div>
-          <div class="small text-white-50 mb-2">Testimonials</div>
-          <h2 class="mb-0" style="font-family:var(--font-display); font-weight:300;">Clients who value craft.</h2>
-        </div>
-        <div class="d-flex gap-2">
-          <button class="btn btn-pill" type="button" data-bs-target="#tCarousel" data-bs-slide="prev" aria-label="Previous testimonial">
-            <i class="bi bi-arrow-left"></i>
-          </button>
-          <button class="btn btn-pill" type="button" data-bs-target="#tCarousel" data-bs-slide="next" aria-label="Next testimonial">
-            <i class="bi bi-arrow-right"></i>
-          </button>
-        </div>
-      </div>
-
-      <div id="tCarousel" class="carousel slide reveal" data-bs-ride="carousel" data-bs-interval="6500">
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <div class="glass p-4 p-md-5">
-              <p class="fs-5 mb-4" style="font-family:var(--font-display); font-weight:300;">
-                “Ruang terasa tenang dan mahal, tanpa harus ramai. Kurva sangat detail dari layout sampai lighting.”
-              </p>
-              <div class="d-flex align-items-center justify-content-between">
-                <div>
-                  <div class="fw-medium">A. Pradana</div>
-                  <div class="small text-white-50">Residential Client</div>
-                </div>
-                <div class="text-white-50">
-                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="carousel-item">
-            <div class="glass p-4 p-md-5">
-              <p class="fs-5 mb-4" style="font-family:var(--font-display); font-weight:300;">
-                “Dokumentasinya rapi dan eksekusinya disiplin. Timeline jelas, hasilnya sesuai ekspektasi.”
-              </p>
-              <div class="d-flex align-items-center justify-content-between">
-                <div>
-                  <div class="fw-medium">S. Mahendra</div>
-                  <div class="small text-white-50">Commercial Client</div>
-                </div>
-                <div class="text-white-50">
-                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="carousel-item">
-            <div class="glass p-4 p-md-5">
-              <p class="fs-5 mb-4" style="font-family:var(--font-display); font-weight:300;">
-                “Desainnya modern tapi tetap hangat. Kami suka detail material dan proporsinya.”
-              </p>
-              <div class="d-flex align-items-center justify-content-between">
-                <div>
-                  <div class="fw-medium">N. Kirana</div>
-                  <div class="small text-white-50">Interior Project</div>
-                </div>
-                <div class="text-white-50">
-                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="carousel-indicators position-static mt-3">
-          <button type="button" data-bs-target="#tCarousel" data-bs-slide-to="0" class="active" aria-label="Slide 1"></button>
-          <button type="button" data-bs-target="#tCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
-          <button type="button" data-bs-target="#tCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
-        </div>
-      </div>
-    </section>
-
-    <style>
-      .carousel-indicators [data-bs-target]{
-        width:10px; height:10px; border-radius:999px;
-        border:1px solid rgba(255,255,255,.25);
-        background:rgba(255,255,255,.10);
-      }
-      .carousel-indicators .active{ background:rgba(255,255,255,.65); }
-    </style>
-
-    <!-- CTA + CONTACT -->
-    <section id="contact" class="container py-5">
-      <div class="row g-4 align-items-stretch">
-        <div class="col-lg-6">
-          <div class="glass p-4 p-md-5 h-100 reveal">
-            <div class="small text-white-50 mb-2">Start a Project</div>
-            <h2 style="font-family:var(--font-display); font-weight:300;">Let’s build something refined.</h2>
-            <p style="color:var(--muted); max-width:62ch;">
-              Beri kami konteks kebutuhanmu—tipe proyek, lokasi, kisaran ukuran, dan preferensi gaya. Kami balas dengan langkah berikutnya dan estimasi awal.
-            </p>
-
-            <form class="mt-4" onsubmit="return false;">
-              <div class="row g-3">
-                <div class="col-md-6">
-                  <label class="form-label text-white-50">Nama</label>
-                  <input class="form-control form-dark" type="text" placeholder="Nama kamu" autocomplete="name" />
-                </div>
-                <div class="col-md-6">
-                  <label class="form-label text-white-50">Email</label>
-                  <input class="form-control form-dark" type="email" placeholder="email@domain.com" autocomplete="email" />
-                </div>
-                <div class="col-12">
-                  <label class="form-label text-white-50">Detail Singkat</label>
-                  <textarea class="form-control form-dark" rows="4" placeholder="Ceritakan kebutuhan proyek kamu..."></textarea>
-                </div>
-                <div class="col-12 d-flex flex-wrap gap-2">
-                  <button class="btn btn-pill" type="submit">
-                    <i class="bi bi-send me-1"></i> Send WhatsApp
-                  </button>
-                </div>
-                <div class="col-12 small text-white-50">
-                  Dengan mengirim form, kamu setuju dihubungi untuk kebutuhan project.
-                </div>
-              </div>
-            </form>
-          </div>
-        </div>
-
-        <div class="col-lg-6">
-          <div class="glass p-3 p-md-4 h-100 reveal">
-            <div class="row g-3">
-              <div class="col-12">
-                <div class="ratio ratio-21x9 rounded-4 overflow-hidden" style="border:1px solid rgba(255,255,255,.10);">
-                  <img
-                    src="https://images.unsplash.com/photo-1519501025264-65ba15a82390?auto=format&fit=crop&w=1600&q=80"
-                    alt="City architecture at night"
-                    class="w-100 h-100 object-fit-cover"
-                    loading="lazy"
-                    decoding="async"
-                  />
-                </div>
-              </div>
-              <div class="col-6">
-                <div class="ratio ratio-1x1 rounded-4 overflow-hidden" style="border:1px solid rgba(255,255,255,.10);">
-                  <img
-                    src="https://images.unsplash.com/photo-1524492412937-b28074a5d7da?auto=format&fit=crop&w=1200&q=80"
-                    alt="Modern stairs"
-                    class="w-100 h-100 object-fit-cover"
-                    loading="lazy"
-                    decoding="async"
-                  />
-                </div>
-              </div>
-              <div class="col-6">
-                <div class="ratio ratio-1x1 rounded-4 overflow-hidden" style="border:1px solid rgba(255,255,255,.10);">
-                  <img
-                    src="https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?auto=format&fit=crop&w=1200&q=80"
-                    alt="Wood interior detail"
-                    class="w-100 h-100 object-fit-cover"
-                    loading="lazy"
-                    decoding="async"
-                  />
-                </div>
-              </div>
-            </div>
-
-            <div class="soft-line my-3"></div>
-
-            <div class="d-flex flex-wrap gap-3">
-              <div class="d-flex align-items-center gap-2 text-white-50">
-                <i class="bi bi-geo-alt"></i><span>Indonesia</span>
-              </div>
-              <div class="d-flex align-items-center gap-2 text-white-50">
-                <i class="bi bi-clock"></i><span>Mon–Fri, 09:00–17:00</span>
-              </div>
-              <div class="d-flex align-items-center gap-2 text-white-50">
-                <i class="bi bi-telephone"></i><span>+62 000-0000-0000</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <style>
-      .form-dark{
-        background: rgba(255,255,255,.05);
-        border:1px solid rgba(255,255,255,.14);
-        color: rgba(255,255,255,.92);
-        border-radius: 14px;
-        padding:.8rem .9rem;
-      }
-      .form-dark::placeholder{ color: rgba(255,255,255,.35); }
-      .form-dark:focus{
-        background: rgba(255,255,255,.06);
-        border-color: rgba(255,255,255,.26);
-        box-shadow: 0 0 0 .25rem rgba(255,255,255,.10);
-        color: rgba(255,255,255,.92);
-      }
-      textarea.form-dark{ resize: vertical; }
-    </style>
-
-    <!-- FAQ -->
-    <section id="faq" class="container py-5">
-      <div class="row g-4">
-        <div class="col-lg-5 reveal">
-          <div class="small text-white-50 mb-2">FAQ</div>
-          <h2 style="font-family:var(--font-display); font-weight:300;">Common questions.</h2>
-          <p style="color:var(--muted); max-width:60ch;">
-            Jawaban cepat sebelum kita ngobrol lebih jauh. Jika kamu punya kebutuhan khusus, kontak kami kapan saja.
-          </p>
-        </div>
-
-        <div class="col-lg-7">
-          <div class="accordion accordion-dark reveal" id="faqAcc">
-            <div class="accordion-item">
-              <h3 class="accordion-header">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#q1">
-                  Berapa lama proses dari konsep sampai siap eksekusi?
-                </button>
-              </h3>
-              <div id="q1" class="accordion-collapse collapse" data-bs-parent="#faqAcc">
-                <div class="accordion-body">
-                  Tergantung skala. Umumnya 2–6 minggu untuk konsep + detail dasar, lalu tahap teknis mengikuti kebutuhan konstruksi.
-                </div>
-              </div>
-            </div>
-
-            <div class="accordion-item">
-              <h3 class="accordion-header">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#q2">
-                  Apakah Kurva bisa handle desain + build?
-                </button>
-              </h3>
-              <div id="q2" class="accordion-collapse collapse" data-bs-parent="#faqAcc">
-                <div class="accordion-body">
-                  Ya. Kami bisa kolaborasi dengan kontraktor pilihanmu atau bantu rekomendasi tim eksekusi yang sesuai standar.
-                </div>
-              </div>
-            </div>
-
-            <div class="accordion-item">
-              <h3 class="accordion-header">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#q3">
-                  Bisa request gaya tertentu?
-                </button>
-              </h3>
-              <div id="q3" class="accordion-collapse collapse" data-bs-parent="#faqAcc">
-                <div class="accordion-body">
-                  Bisa. Kami adaptif pada preferensi, namun tetap menjaga prinsip proporsi, material, dan fungsionalitas.
-                </div>
-              </div>
-            </div>
-
-            <div class="accordion-item">
-              <h3 class="accordion-header">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#q4">
-                  Bagaimana sistem pembayaran?
-                </button>
-              </h3>
-              <div id="q4" class="accordion-collapse collapse" data-bs-parent="#faqAcc">
-                <div class="accordion-body">
-                  Umumnya bertahap: DP untuk mulai, tahap konsep, tahap teknis, dan finalisasi sesuai scope pekerjaan.
-                </div>
-              </div>
-            </div>
-
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <style>
-      .accordion-dark .accordion-item{
-        background: rgba(255,255,255,.05);
-        border:1px solid rgba(255,255,255,.12);
-        border-radius: 16px;
-        overflow:hidden;
-        margin-bottom: 10px;
-      }
-      .accordion-dark .accordion-button{
-        background: transparent;
-        color: rgba(255,255,255,.90);
-        border:0;
-        box-shadow:none;
-        padding: 1.1rem 1.15rem;
-        font-weight:500;
-      }
-      .accordion-dark .accordion-button:not(.collapsed){
-        background: rgba(255,255,255,.06);
-      }
-      .accordion-dark .accordion-button::after{
-        filter: invert(1) opacity(.75);
-      }
-      .accordion-dark .accordion-body{
-        color: rgba(255,255,255,.68);
-        padding: 0 1.15rem 1.15rem;
-      }
-    </style>
-
-  </main>
-
-  <!-- FOOTER -->
-  <footer class="container py-5">
-    <div class="soft-line mb-4"></div>
-    <div class="row g-4">
-      <div class="col-lg-6">
-        <div class="k-brand mb-2">
-          <span class="k-mark" aria-hidden="true"></span>
-          <span>Kurva</span>
-        </div>
-        <p class="mb-0" style="color:var(--muted); max-width:60ch;">
-          Modern spaces—calm, functional, and crafted. Built on Bootstrap, optimized for SEO, AI Overview, and PageSpeed.
-        </p>
-      </div>
-      <div class="col-lg-6">
-        <div class="d-flex flex-wrap gap-2 justify-content-lg-end">
-          <a class="btn btn-pill" href="#home">Top</a>
-          <a class="btn btn-pill" href="#projects">Projects</a>
-          <a class="btn btn-pill" href="#about">About</a>
-          <a class="btn btn-pill" href="#contact">Contact</a>
-        </div>
-      </div>
-      <div class="col-12 small text-white-50">
-        © <span id="yearNow2"></span> Kurva • Author: Muhammad Affizar Ibrahim Alkautsar
-      </div>
-    </div>
-  </footer>
-
-  <style>
-    footer{ padding-bottom: 4rem; }
-  </style>
-
-  <!-- Bootstrap JS (defer) -->
-  <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
-
-  <!-- Interaction JS (defer) -->
-  <script defer>
-    (function(){
-      const y = new Date().getFullYear();
-      document.getElementById('yearNow').textContent = y;
-      document.getElementById('yearNow2').textContent = y;
-
-      const overlay = document.getElementById('overlayNav');
-      const menuBtn = document.getElementById('menuBtn');
-      const closeBtn = document.getElementById('closeBtn');
-
-      function openMenu(){
-        overlay.classList.add('open');
-        overlay.setAttribute('aria-hidden','false');
-        menuBtn.setAttribute('aria-expanded','true');
-        document.body.style.overflow = 'hidden';
-      }
-      function closeMenu(){
-        overlay.classList.remove('open');
-        overlay.setAttribute('aria-hidden','true');
-        menuBtn.setAttribute('aria-expanded','false');
-        document.body.style.overflow = '';
-      }
-
-      menuBtn.addEventListener('click', openMenu);
-      closeBtn.addEventListener('click', closeMenu);
-
-      overlay.addEventListener('click', (e)=>{
-        if(e.target === overlay) closeMenu();
-      });
-
-      document.querySelectorAll('[data-close]').forEach(el=>{
-        el.addEventListener('click', ()=> closeMenu());
-      });
-
-      document.addEventListener('keydown', (e)=>{
-        if(e.key === 'Escape' && overlay.classList.contains('open')) closeMenu();
-      });
-
-      const items = document.querySelectorAll('.reveal');
-      const io = new IntersectionObserver((entries)=>{
-        entries.forEach(ent=>{
-          if(ent.isIntersecting){
-            ent.target.classList.add('is-in');
-            io.unobserve(ent.target);
-          }
-        });
-      }, { threshold: 0.12 });
-      items.forEach(el => io.observe(el));
-
-      const headerOffset = 88;
-      document.querySelectorAll('a[href^="#"]').forEach(a=>{
-        a.addEventListener('click', (e)=>{
-          const id = a.getAttribute('href');
-          if(!id || id === '#') return;
-          const target = document.querySelector(id);
-          if(!target) return;
-
-          e.preventDefault();
-          const top = target.getBoundingClientRect().top + window.pageYOffset - headerOffset;
-          window.scrollTo({ top, behavior:'smooth' });
-          history.pushState(null, '', id);
-        });
-      });
-    })();
-  </script>
-
-</body>
-</html>
+<!-- =========================
+     blog.html
+     ========================= -->
+     <!doctype html>
+     <html lang="id">
+     <head>
+       <meta charset="utf-8" />
+       <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+     
+       <title>Kurva — Journal</title>
+       <meta name="description" content="The Kurva Journal: insight, ide, dan update seputar properti, desain, arsitektur modern, serta pengembangan ruang." />
+     
+       <meta name="author" content="Muhammad Affizar Ibrahim Alkautsar" />
+       <meta name="keywords" content="Muhammad Affizar Ibrahim Alkautsar, Kurva, blog arsitektur, desain modern, properti, real estate, interior, journal" />
+     
+       <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+       <link rel="canonical" href="https://example.com/blog.html" />
+     
+       <meta name="theme-color" content="#000000" />
+       <meta name="color-scheme" content="dark light" />
+     
+       <!-- Performance hints -->
+       <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+       <link rel="dns-prefetch" href="https://cdn.jsdelivr.net" />
+       <link rel="preconnect" href="https://fonts.googleapis.com" />
+       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+       <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+       <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
+       <link rel="preconnect" href="https://images.unsplash.com" crossorigin />
+       <link rel="dns-prefetch" href="https://images.unsplash.com" />
+     
+       <!-- Fonts -->
+       <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+     
+       <!-- Open Graph -->
+       <meta property="og:site_name" content="Kurva" />
+       <meta property="og:title" content="Kurva — Journal" />
+       <meta property="og:description" content="Insights, ideas, and updates from the world of property, design, and modern development." />
+       <meta property="og:type" content="website" />
+       <meta property="og:url" content="https://example.com/blog.html" />
+       <meta property="og:image" content="https://images.unsplash.com/photo-1496307653780-42ee777d4833?auto=format&fit=crop&w=1200&q=80" />
+       <meta property="og:locale" content="id_ID" />
+     
+       <!-- Twitter -->
+       <meta name="twitter:card" content="summary_large_image" />
+       <meta name="twitter:title" content="Kurva — Journal" />
+       <meta name="twitter:description" content="Insights, ideas, and updates from the world of property, design, and modern development." />
+       <meta name="twitter:image" content="https://images.unsplash.com/photo-1496307653780-42ee777d4833?auto=format&fit=crop&w=1200&q=80" />
+     
+       <!-- Favicon pack -->
+       <link rel="icon" href="/favicon.ico" sizes="any" />
+       <link rel="icon" href="/assets/favicons/favicon.svg" type="image/svg+xml" />
+       <link rel="apple-touch-icon" href="/assets/favicons/apple-touch-icon.png" />
+       <link rel="manifest" href="/site.webmanifest" />
+       <meta name="apple-mobile-web-app-title" content="Kurva" />
+       <meta name="application-name" content="Kurva" />
+       <meta name="msapplication-TileColor" content="#000000" />
+     
+       <!-- Bootstrap -->
+       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" crossorigin="anonymous" />
+     
+       <!-- Icons -->
+       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" crossorigin="anonymous" />
+     
+       <!-- Structured Data -->
+       <script type="application/ld+json">
+       {
+         "@context":"https://schema.org",
+         "@type":"Blog",
+         "name":"The Kurva Journal",
+         "url":"https://example.com/blog.html",
+         "inLanguage":"id-ID",
+         "author":{"@type":"Person","name":"Muhammad Affizar Ibrahim Alkautsar"},
+         "publisher":{"@type":"Organization","name":"Kurva","url":"https://example.com/"}
+       }
+       </script>
+     
+       <style>
+         :root{
+           --bg:#000;
+           --text:rgba(255,255,255,.92);
+           --muted:rgba(255,255,255,.62);
+           --muted2:rgba(255,255,255,.42);
+           --line:rgba(255,255,255,.10);
+           --line2:rgba(255,255,255,.16);
+           --shadow:0 18px 50px rgba(0,0,0,.55);
+           --r-xl:22px;
+           --r-lg:18px;
+           --r-md:14px;
+           --ease:cubic-bezier(.2,.8,.2,1);
+           --ease2:cubic-bezier(.16,1,.3,1);
+           --font-ui:"Inter",system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+           --font-display:"Montserrat",system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+         }
+         html{ scroll-behavior:smooth; }
+         body{
+           font-family:var(--font-ui);
+           background:var(--bg);
+           color:var(--text);
+           overflow-x:hidden;
+           margin:0;
+           padding-top:0 !important;
+         }
+         a{ color:inherit; text-decoration:none; }
+         .container{ max-width:1180px; }
+         .soft-line{ border-top:1px solid var(--line); }
+         .btn-pill{
+           border-radius:999px;
+           padding:.65rem 1rem;
+           border:1px solid var(--line2);
+           background:rgba(255,255,255,.06);
+           color:var(--text);
+           transition: transform .2s var(--ease), background .2s var(--ease), border-color .2s var(--ease);
+         }
+         .btn-pill:hover{ transform: translateY(-1px); background:rgba(255,255,255,.09); border-color:rgba(255,255,255,.22); }
+         .btn-pill:focus{ outline:none; box-shadow:0 0 0 .25rem rgba(255,255,255,.12); }
+     
+         .k-brand{
+           display:flex; align-items:center; gap:.6rem;
+           letter-spacing:.2px;
+           font-family:var(--font-display);
+           font-weight:400;
+         }
+         .k-mark{
+           width:18px; height:18px; border-radius:6px;
+           border:1px solid rgba(255,255,255,.24);
+           background: radial-gradient(circle at 30% 30%, rgba(255,255,255,.18), rgba(255,255,255,.02));
+           box-shadow:0 0 0 1px rgba(255,255,255,.06) inset;
+         }
+     
+         .reveal{ opacity:0; transform: translateY(14px); transition: opacity .8s var(--ease2), transform .8s var(--ease2); }
+         .reveal.is-in{ opacity:1; transform:none; }
+     
+         header{ margin-top:0 !important; }
+         footer{ padding-bottom:4rem; }
+     
+         .page-hero{ padding-top: 28px !important; padding-bottom: 10px !important; }
+         .page-title{
+           font-family: var(--font-display);
+           font-weight:300;
+           letter-spacing:.2px;
+           font-size: clamp(44px, 4.6vw, 66px);
+           line-height:1.05;
+           margin: 0 0 10px;
+         }
+         .page-sub{
+           color: var(--muted);
+           font-size: 12.5px;
+           line-height: 1.75;
+           max-width: 92ch;
+           margin: 0;
+         }
+     
+         /* Cards */
+         .post-card{ display:block; }
+         .post-media{
+           border-radius: 0;
+           overflow:hidden;
+           border:1px solid rgba(255,255,255,.12);
+           background: rgba(255,255,255,.04);
+           box-shadow: 0 18px 55px rgba(0,0,0,.45);
+           aspect-ratio: 16 / 9;
+           position:relative;
+         }
+         .post-media img{
+           width:100%;
+           height:100%;
+           object-fit:cover;
+           display:block;
+           transition: transform .35s var(--ease), filter .35s var(--ease);
+           filter:saturate(.98) contrast(1.02);
+         }
+         .post-card:hover .post-media img{
+           transform: scale(1.03);
+           filter:saturate(1.05) contrast(1.05);
+         }
+         .post-title{
+           margin: 12px 0 6px;
+           font-weight:500;
+           color: rgba(255,255,255,.86);
+           font-size: 13px;
+           line-height: 1.4;
+           max-width: 46ch;
+         }
+         .post-date{
+           color: rgba(255,255,255,.52);
+           font-size: 11px;
+           margin: 0;
+         }
+     
+         .big-strip{
+           margin-top: 34px;
+           border-top: 1px solid var(--line);
+           border-bottom: 1px solid var(--line);
+           background: rgba(255,255,255,.02);
+           overflow:hidden;
+         }
+         .big-strip .track{
+           display:flex;
+           white-space:nowrap;
+           padding: 16px 0;
+           animation: strip 18s linear infinite;
+           font-family: var(--font-display);
+           font-weight:300;
+           letter-spacing: 3px;
+           color: rgba(255,255,255,.62);
+           text-transform: uppercase;
+           font-size: clamp(24px, 2.8vw, 40px);
+         }
+         .big-strip .track span{ padding: 0 20px; }
+         @keyframes strip{
+           from{ transform: translateX(0); }
+           to{ transform: translateX(-50%); }
+         }
+     
+         /* =========================
+            TAMBAHAN: PAGINATION STYLE
+            ========================= */
+         .pager-wrap{
+           margin-top: 10px;
+           margin-bottom: 10px;
+         }
+         .pager-card{
+           border-radius: 999px;
+           border: 1px solid rgba(255,255,255,.12);
+           background: rgba(255,255,255,.03);
+           padding: 10px;
+           display:flex;
+           align-items:center;
+           justify-content:space-between;
+           gap: 10px;
+         }
+         .pager-info{
+           font-size: 12px;
+           color: rgba(255,255,255,.62);
+           padding: 0 6px;
+           white-space:nowrap;
+         }
+         .pager-btn{
+           display:inline-flex;
+           align-items:center;
+           gap: 8px;
+           border-radius: 999px;
+           padding: .55rem .9rem;
+           border:1px solid rgba(255,255,255,.16);
+           background: rgba(255,255,255,.06);
+           color: rgba(255,255,255,.88);
+           font-size: 12px;
+           transition: transform .2s var(--ease), background .2s var(--ease), border-color .2s var(--ease), opacity .2s var(--ease);
+           cursor:pointer;
+           user-select:none;
+         }
+         .pager-btn:hover{ transform: translateY(-1px); background: rgba(255,255,255,.09); border-color: rgba(255,255,255,.24); }
+         .pager-btn[aria-disabled="true"]{
+           opacity: .45;
+           pointer-events: none;
+         }
+     
+         /* =========================
+            TAMBAHAN: FLOATING WA + UP
+            ========================= */
+         .float-stack{
+           position: fixed;
+           right: 16px;
+           bottom: 16px;
+           z-index: 9998;
+           display:flex;
+           flex-direction:column;
+           gap: 10px;
+           pointer-events:none;
+         }
+         .float-btn{
+           pointer-events:auto;
+           width: 46px;
+           height: 46px;
+           border-radius: 999px;
+           display:flex;
+           align-items:center;
+           justify-content:center;
+           border: 1px solid rgba(255,255,255,.18);
+           background: rgba(255,255,255,.06);
+           color: rgba(255,255,255,.92);
+           box-shadow: 0 18px 55px rgba(0,0,0,.55);
+           backdrop-filter: blur(10px);
+           -webkit-backdrop-filter: blur(10px);
+           transition: transform .2s var(--ease), background .2s var(--ease), border-color .2s var(--ease), opacity .25s var(--ease);
+           opacity: 1;
+         }
+         .float-btn:hover{
+           transform: translateY(-2px);
+           background: rgba(255,255,255,.09);
+           border-color: rgba(255,255,255,.28);
+         }
+         .float-btn:focus{ outline:none; box-shadow:0 0 0 .25rem rgba(255,255,255,.12); }
+         .float-btn .bi{ font-size: 20px; }
+     
+         /* label kecil opsional */
+         .float-label{
+           position:absolute;
+           right: 58px;
+           background: rgba(0,0,0,.78);
+           border: 1px solid rgba(255,255,255,.14);
+           color: rgba(255,255,255,.86);
+           font-size: 11px;
+           padding: 6px 10px;
+           border-radius: 999px;
+           white-space:nowrap;
+           opacity: 0;
+           transform: translateY(2px);
+           transition: opacity .2s var(--ease), transform .2s var(--ease);
+           pointer-events:none;
+         }
+         .float-wrap{ position:relative; }
+         .float-wrap:hover .float-label{ opacity: 1; transform: none; }
+     
+         /* hide up button saat di atas */
+         .float-btn.is-hidden{
+           opacity: 0;
+           transform: translateY(8px);
+           pointer-events:none;
+         }
+       </style>
+     </head>
+     
+     <body>
+     
+       <!-- NAVBAR -->
+       <header class="position-sticky top-0 z-3" style="background:rgba(0,0,0,.72); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom:1px solid rgba(255,255,255,.08);">
+         <div class="container py-3 d-flex align-items-center justify-content-between">
+           <a href="index.html#home" class="k-brand" aria-label="Go to Home">
+             <span class="k-mark" aria-hidden="true"></span>
+             <span>Kurva</span>
+           </a>
+     
+           <div class="d-flex align-items-center gap-2">
+             <a href="index.html#contact" class="btn btn-pill d-none d-md-inline-flex">Contact Us</a>
+             <button id="menuBtn" class="btn btn-pill d-inline-flex align-items-center gap-2" type="button" aria-label="Open menu" aria-controls="overlayNav" aria-expanded="false">
+               <span class="d-none d-sm-inline">Menu</span>
+               <i class="bi bi-list fs-5"></i>
+             </button>
+           </div>
+         </div>
+       </header>
+     
+       <!-- OVERLAY NAV -->
+       <div id="overlayNav" class="overlay-nav" aria-hidden="true">
+         <div class="container h-100 d-flex flex-column">
+           <div class="d-flex align-items-center justify-content-between py-4">
+             <a href="index.html#home" class="k-brand" data-close aria-label="Go to Home">
+               <span class="k-mark" aria-hidden="true"></span>
+               <span>Kurva</span>
+             </a>
+             <div class="d-flex align-items-center gap-2">
+               <a href="index.html#contact" class="btn btn-pill">Contact Us</a>
+               <button id="closeBtn" class="btn btn-pill" type="button" aria-label="Close menu" data-close>
+                 <i class="bi bi-x-lg"></i>
+               </button>
+             </div>
+           </div>
+     
+           <div class="flex-grow-1 d-flex align-items-center justify-content-center">
+             <nav class="text-center overlay-links" aria-label="Site">
+               <a class="overlay-link" href="index.html#home" data-close>Home</a>
+               <a class="overlay-link" href="projects.html" data-close>Our Projects</a>
+               <a class="overlay-link" href="about.html" data-close>About Us</a>
+               <a class="overlay-link" href="blog.html" data-close>Blog</a>
+             </nav>
+           </div>
+     
+           <div class="pb-4 text-center text-white-50 small">
+             <span>© <span id="yearNow"></span> Kurva. Crafted for performance & SEO.</span>
+           </div>
+         </div>
+       </div>
+     
+       <style>
+         .overlay-nav{
+           position:fixed; inset:0;
+           background:rgba(0,0,0,.92);
+           backdrop-filter: blur(16px);
+           -webkit-backdrop-filter: blur(16px);
+           opacity:0; pointer-events:none;
+           transition: opacity .28s var(--ease);
+           z-index: 9999;
+         }
+         .overlay-nav.open{ opacity:1; pointer-events:auto; }
+         .overlay-links{
+           display:flex; flex-direction:column; gap:34px;
+           font-family: var(--font-display);
+           letter-spacing:.4px;
+         }
+         .overlay-link{
+           font-size: clamp(34px, 5vw, 56px);
+           font-weight:300;
+           color: rgba(255,255,255,.90);
+           transition: transform .22s var(--ease), opacity .22s var(--ease);
+         }
+         .overlay-link:hover{ transform: translateY(-2px); opacity: .95; }
+       </style>
+     
+       <main>
+         <!-- HERO -->
+         <section class="container page-hero">
+           <div class="soft-line mb-4" style="opacity:.75"></div>
+           <div class="row">
+             <div class="col-lg-8 reveal">
+               <h1 class="page-title">The Kurva Journal</h1>
+               <p class="page-sub">
+                 Insights, ideas, and updates from the world of property, design, and modern development.
+               </p>
+             </div>
+           </div>
+         </section>
+     
+         <!-- GRID POSTS -->
+         <section class="container pb-4">
+           <div class="row g-4" id="postsGrid"></div>
+     
+           <!-- =========================
+                TAMBAHAN: PAGINATION (di bawah grid)
+                ========================= -->
+           <div class="pager-wrap mt-4 reveal" id="pagerWrap" style="display:none;">
+             <div class="pager-card">
+               <a class="pager-btn" id="pagerPrev" href="#" aria-label="Previous page"><i class="bi bi-arrow-left"></i> Prev</a>
+               <div class="pager-info" id="pagerInfo">Page 1 / 1</div>
+               <a class="pager-btn" id="pagerNext" href="#" aria-label="Next page">Next <i class="bi bi-arrow-right"></i></a>
+             </div>
+           </div>
+           <!-- =========================
+                END TAMBAHAN
+                ========================= -->
+         </section>
+     
+         <!-- MARQUEE STRIP -->
+         <section class="big-strip" aria-hidden="true">
+           <div class="track">
+             <span>ARCHITECTURE • LIVING • SIMPLICITY • ARCHITECTURE •</span>
+             <span>ARCHITECTURE • LIVING • SIMPLICITY • ARCHITECTURE •</span>
+             <span>ARCHITECTURE • LIVING • SIMPLICITY • ARCHITECTURE •</span>
+             <span>ARCHITECTURE • LIVING • SIMPLICITY • ARCHITECTURE •</span>
+           </div>
+         </section>
+       </main>
+     
+       <!-- FOOTER -->
+       <footer class="container py-5">
+         <div class="soft-line mb-4"></div>
+         <div class="row g-4">
+           <div class="col-lg-6">
+             <div class="k-brand mb-2">
+               <span class="k-mark" aria-hidden="true"></span>
+               <span>Kurva</span>
+             </div>
+             <p class="mb-0" style="color:var(--muted); max-width:60ch;">
+               Modern spaces—calm, functional, and crafted. Built on Bootstrap, optimized for SEO, AI Overview, and PageSpeed.
+             </p>
+           </div>
+           <div class="col-lg-6">
+             <div class="d-flex flex-wrap gap-2 justify-content-lg-end">
+               <a class="btn btn-pill" href="index.html#home">Top</a>
+               <a class="btn btn-pill" href="projects.html">Projects</a>
+               <a class="btn btn-pill" href="about.html">About</a>
+               <a class="btn btn-pill" href="blog.html">Blog</a>
+               <a class="btn btn-pill" href="index.html#contact">Contact</a>
+             </div>
+           </div>
+           <div class="col-12 small text-white-50">
+             © <span id="yearNow2"></span> Kurva • Author: Muhammad Affizar Ibrahim Alkautsar
+           </div>
+         </div>
+       </footer>
+     
+       <!-- =========================
+            TAMBAHAN: FLOATING WA + UP
+            ========================= -->
+       <div class="float-stack" aria-label="Quick actions">
+         <!-- Up (di atas WA) -->
+         <div class="float-wrap">
+           <span class="float-label">Ke atas</span>
+           <button class="float-btn is-hidden" id="floatUp" type="button" aria-label="Scroll to top">
+             <i class="bi bi-arrow-up"></i>
+           </button>
+         </div>
+     
+         <!-- WhatsApp -->
+         <div class="float-wrap">
+           <span class="float-label">WhatsApp</span>
+           <a class="float-btn" id="floatWA" href="#" target="_blank" rel="noopener noreferrer" aria-label="Chat WhatsApp">
+             <i class="bi bi-whatsapp"></i>
+           </a>
+         </div>
+       </div>
+       <!-- =========================
+            END TAMBAHAN
+            ========================= -->
+     
+       <!-- Bootstrap JS (defer) -->
+       <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+     
+       <!-- Page JS (defer): render posts + overlay nav + reveal -->
+       <script defer>
+         (function(){
+           // ========= 1) DATA INDEX (sinkron dengan post.html) =========
+           // Pastikan slug ini ADA juga di POST.html bagian POSTS.
+           const POSTS_INDEX = [
+             {
+               slug: "the-future-of-urban-living",
+               title: "The Future of Urban Living: Why Co-Living Spaces Are on the Rise",
+               dateLabel: "Jun 2, 2025",
+               img: "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=1600&q=80",
+               alt: "Co-living modern interior"
+             },
+             {
+               slug: "real-estate-smart-investment",
+               title: "Getting Started in Real Estate: A Beginner’s Guide to Smart Investment",
+               dateLabel: "Jun 2, 2025",
+               img: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=1600&q=80",
+               alt: "Planner and miniature house concept"
+             },
+             {
+               slug: "vacation-rental-properties",
+               title: "Vacation Rental Properties: How to Turn Getaways Into Profitable Assets",
+               dateLabel: "Jun 2, 2025",
+               img: "https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=1600&q=80",
+               alt: "Vacation rental house with pool"
+             },
+             {
+               slug: "sustainable-living",
+               title: "Sustainable Living: How Eco-Friendly Homes Are Shaping the Future",
+               dateLabel: "Jun 2, 2025",
+               img: "https://images.unsplash.com/photo-1509395176047-4a66953fd231?auto=format&fit=crop&w=1600&q=80",
+               alt: "Eco-friendly house with solar panels"
+             },
+             {
+               slug: "the-rise-of-smart-homes",
+               title: "The Rise of Smart Homes: How Technology Is Reshaping Everyday Living",
+               dateLabel: "Jun 2, 2025",
+               img: "https://images.unsplash.com/photo-1558002038-1055907df827?auto=format&fit=crop&w=1600&q=80",
+               alt: "Smart home control on smartphone"
+             },
+             {
+               slug: "real-estate-remains-resilient",
+               title: "Why Real Estate Remains One of the Most Resilient Investments",
+               dateLabel: "Jun 2, 2025",
+               img: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=1600&q=80",
+               alt: "Miniature house model representing real estate"
+             },
+     
+             /* =========================
+                TAMBAHAN: 3 BLOG LAGI
+                Pastikan slug ini kamu tambahkan juga di post.html -> POSTS
+                ========================= */
+             {
+               slug: "property-portfolio-blueprint",
+               title: "Building a Property Portfolio: A Practical Blueprint for Beginners",
+               dateLabel: "Jun 18, 2025",
+               img: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1600&q=80",
+               alt: "City building and portfolio concept"
+             },
+             {
+               slug: "renovation-roi-playbook",
+               title: "Renovation ROI Playbook: Upgrades That Actually Increase Value",
+               dateLabel: "Jun 22, 2025",
+               img: "https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1600&q=80",
+               alt: "Renovation and blueprint tools"
+             },
+             {
+               slug: "rental-cashflow-essentials",
+               title: "Rental Cashflow Essentials: How to Read Income, Expense, and Risk",
+               dateLabel: "Jun 28, 2025",
+               img: "https://images.unsplash.com/photo-1554224154-22dec7ec8818?auto=format&fit=crop&w=1600&q=80",
+               alt: "Cashflow and finance planning"
+             }
+             /* =========================
+                END TAMBAHAN
+                ========================= */
+           ];
+     
+           /* =========================
+              TAMBAHAN: Pagination logic (Prev/Next) + page param
+              ========================= */
+           function qs(name){
+             return new URLSearchParams(window.location.search).get(name);
+           }
+           function clamp(n, min, max){
+             return Math.max(min, Math.min(max, n));
+           }
+     
+           const PER_PAGE = 6; // kamu bisa ubah tanpa ngubah struktur
+           const totalPosts = POSTS_INDEX.length;
+           const totalPages = Math.max(1, Math.ceil(totalPosts / PER_PAGE));
+     
+           const pageRaw = parseInt(qs('page') || '1', 10);
+           const currentPage = clamp(isNaN(pageRaw) ? 1 : pageRaw, 1, totalPages);
+     
+           const start = (currentPage - 1) * PER_PAGE;
+           const end = start + PER_PAGE;
+           const pageItems = POSTS_INDEX.slice(start, end);
+     
+           // Render grid (klik card -> post.html?post=slug)
+           const grid = document.getElementById("postsGrid");
+           grid.innerHTML = pageItems.map((p)=>`
+             <div class="col-md-6 col-lg-4 reveal">
+               <a class="post-card" href="post.html?post=${encodeURIComponent(p.slug)}" aria-label="${p.title}">
+                 <div class="post-media">
+                   <img src="${p.img}" alt="${p.alt}" loading="lazy" decoding="async" />
+                 </div>
+                 <div class="post-title">${p.title}</div>
+                 <p class="post-date">${p.dateLabel}</p>
+               </a>
+             </div>
+           `).join("");
+     
+           // Setup pager
+           const pagerWrap = document.getElementById('pagerWrap');
+           const pagerPrev = document.getElementById('pagerPrev');
+           const pagerNext = document.getElementById('pagerNext');
+           const pagerInfo = document.getElementById('pagerInfo');
+     
+           if(totalPages > 1){
+             pagerWrap.style.display = "";
+             pagerInfo.textContent = `Page ${currentPage} / ${totalPages}`;
+     
+             const prevPage = currentPage - 1;
+             const nextPage = currentPage + 1;
+     
+             // link prev/next
+             pagerPrev.href = prevPage >= 1 ? `blog.html?page=${prevPage}` : '#';
+             pagerNext.href = nextPage <= totalPages ? `blog.html?page=${nextPage}` : '#';
+     
+             pagerPrev.setAttribute('aria-disabled', prevPage >= 1 ? 'false' : 'true');
+             pagerNext.setAttribute('aria-disabled', nextPage <= totalPages ? 'false' : 'true');
+           } else {
+             pagerWrap.style.display = "none";
+           }
+           /* =========================
+              END TAMBAHAN
+              ========================= */
+     
+           // ========= 2) YEAR =========
+           const y = new Date().getFullYear();
+           document.getElementById('yearNow').textContent = y;
+           document.getElementById('yearNow2').textContent = y;
+     
+           // ========= 3) OVERLAY NAV =========
+           const overlay = document.getElementById('overlayNav');
+           const menuBtn = document.getElementById('menuBtn');
+           const closeBtn = document.getElementById('closeBtn');
+     
+           function openMenu(){
+             overlay.classList.add('open');
+             overlay.setAttribute('aria-hidden','false');
+             menuBtn.setAttribute('aria-expanded','true');
+             document.body.style.overflow = 'hidden';
+           }
+           function closeMenu(){
+             overlay.classList.remove('open');
+             overlay.setAttribute('aria-hidden','true');
+             menuBtn.setAttribute('aria-expanded','false');
+             document.body.style.overflow = '';
+           }
+     
+           menuBtn.addEventListener('click', openMenu);
+           closeBtn.addEventListener('click', closeMenu);
+     
+           overlay.addEventListener('click', (e)=>{
+             if(e.target === overlay) closeMenu();
+           });
+           document.querySelectorAll('[data-close]').forEach(el=>{
+             el.addEventListener('click', ()=> closeMenu());
+           });
+           document.addEventListener('keydown', (e)=>{
+             if(e.key === 'Escape' && overlay.classList.contains('open')) closeMenu();
+           });
+     
+           // ========= 4) REVEAL =========
+           const items = document.querySelectorAll('.reveal');
+           const io = new IntersectionObserver((entries)=>{
+             entries.forEach(ent=>{
+               if(ent.isIntersecting){
+                 ent.target.classList.add('is-in');
+                 io.unobserve(ent.target);
+               }
+             });
+           }, { threshold: 0.12 });
+           items.forEach(el => io.observe(el));
+     
+           /* =========================
+              TAMBAHAN: Floating WhatsApp + Scroll Up
+              ========================= */
+           const WA_NUMBER = "6281234567890"; // samakan dengan post.html
+           const WA_DEFAULT_MESSAGE = "Halo Kurva, saya ingin konsultasi terkait kebutuhan saya. Saya menghubungi dari halaman Journal.";
+           const waText = encodeURIComponent(WA_DEFAULT_MESSAGE);
+     
+           const floatWA = document.getElementById('floatWA');
+           if(floatWA){
+             floatWA.href = `https://wa.me/${WA_NUMBER}?text=${waText}`;
+           }
+     
+           const floatUp = document.getElementById('floatUp');
+           function toggleUp(){
+             if(!floatUp) return;
+             const show = window.scrollY > 420;
+             floatUp.classList.toggle('is-hidden', !show);
+           }
+           toggleUp();
+           window.addEventListener('scroll', toggleUp, { passive:true });
+     
+           if(floatUp){
+             floatUp.addEventListener('click', ()=>{
+               window.scrollTo({ top: 0, behavior: 'smooth' });
+             });
+           }
+           /* =========================
+              END TAMBAHAN
+              ========================= */
+         })();
+       </script>
+     </body>
+     </html>
+     
