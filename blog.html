@@ -212,6 +212,113 @@
            from{ transform: translateX(0); }
            to{ transform: translateX(-50%); }
          }
+     
+         /* =========================
+            TAMBAHAN: PAGINATION STYLE
+            ========================= */
+         .pager-wrap{
+           margin-top: 10px;
+           margin-bottom: 10px;
+         }
+         .pager-card{
+           border-radius: 999px;
+           border: 1px solid rgba(255,255,255,.12);
+           background: rgba(255,255,255,.03);
+           padding: 10px;
+           display:flex;
+           align-items:center;
+           justify-content:space-between;
+           gap: 10px;
+         }
+         .pager-info{
+           font-size: 12px;
+           color: rgba(255,255,255,.62);
+           padding: 0 6px;
+           white-space:nowrap;
+         }
+         .pager-btn{
+           display:inline-flex;
+           align-items:center;
+           gap: 8px;
+           border-radius: 999px;
+           padding: .55rem .9rem;
+           border:1px solid rgba(255,255,255,.16);
+           background: rgba(255,255,255,.06);
+           color: rgba(255,255,255,.88);
+           font-size: 12px;
+           transition: transform .2s var(--ease), background .2s var(--ease), border-color .2s var(--ease), opacity .2s var(--ease);
+           cursor:pointer;
+           user-select:none;
+         }
+         .pager-btn:hover{ transform: translateY(-1px); background: rgba(255,255,255,.09); border-color: rgba(255,255,255,.24); }
+         .pager-btn[aria-disabled="true"]{
+           opacity: .45;
+           pointer-events: none;
+         }
+     
+         /* =========================
+            TAMBAHAN: FLOATING WA + UP
+            ========================= */
+         .float-stack{
+           position: fixed;
+           right: 16px;
+           bottom: 16px;
+           z-index: 9998;
+           display:flex;
+           flex-direction:column;
+           gap: 10px;
+           pointer-events:none;
+         }
+         .float-btn{
+           pointer-events:auto;
+           width: 46px;
+           height: 46px;
+           border-radius: 999px;
+           display:flex;
+           align-items:center;
+           justify-content:center;
+           border: 1px solid rgba(255,255,255,.18);
+           background: rgba(255,255,255,.06);
+           color: rgba(255,255,255,.92);
+           box-shadow: 0 18px 55px rgba(0,0,0,.55);
+           backdrop-filter: blur(10px);
+           -webkit-backdrop-filter: blur(10px);
+           transition: transform .2s var(--ease), background .2s var(--ease), border-color .2s var(--ease), opacity .25s var(--ease);
+           opacity: 1;
+         }
+         .float-btn:hover{
+           transform: translateY(-2px);
+           background: rgba(255,255,255,.09);
+           border-color: rgba(255,255,255,.28);
+         }
+         .float-btn:focus{ outline:none; box-shadow:0 0 0 .25rem rgba(255,255,255,.12); }
+         .float-btn .bi{ font-size: 20px; }
+     
+         /* label kecil opsional */
+         .float-label{
+           position:absolute;
+           right: 58px;
+           background: rgba(0,0,0,.78);
+           border: 1px solid rgba(255,255,255,.14);
+           color: rgba(255,255,255,.86);
+           font-size: 11px;
+           padding: 6px 10px;
+           border-radius: 999px;
+           white-space:nowrap;
+           opacity: 0;
+           transform: translateY(2px);
+           transition: opacity .2s var(--ease), transform .2s var(--ease);
+           pointer-events:none;
+         }
+         .float-wrap{ position:relative; }
+         .float-wrap:hover .float-label{ opacity: 1; transform: none; }
+     
+         /* hide up button saat di atas */
+         .float-btn.is-hidden{
+           opacity: 0;
+           transform: translateY(8px);
+           pointer-events:none;
+         }
        </style>
      </head>
      
@@ -308,6 +415,20 @@
          <!-- GRID POSTS -->
          <section class="container pb-4">
            <div class="row g-4" id="postsGrid"></div>
+     
+           <!-- =========================
+                TAMBAHAN: PAGINATION (di bawah grid)
+                ========================= -->
+           <div class="pager-wrap mt-4 reveal" id="pagerWrap" style="display:none;">
+             <div class="pager-card">
+               <a class="pager-btn" id="pagerPrev" href="#" aria-label="Previous page"><i class="bi bi-arrow-left"></i> Prev</a>
+               <div class="pager-info" id="pagerInfo">Page 1 / 1</div>
+               <a class="pager-btn" id="pagerNext" href="#" aria-label="Next page">Next <i class="bi bi-arrow-right"></i></a>
+             </div>
+           </div>
+           <!-- =========================
+                END TAMBAHAN
+                ========================= -->
          </section>
      
          <!-- MARQUEE STRIP -->
@@ -348,6 +469,30 @@
            </div>
          </div>
        </footer>
+     
+       <!-- =========================
+            TAMBAHAN: FLOATING WA + UP
+            ========================= -->
+       <div class="float-stack" aria-label="Quick actions">
+         <!-- Up (di atas WA) -->
+         <div class="float-wrap">
+           <span class="float-label">Ke atas</span>
+           <button class="float-btn is-hidden" id="floatUp" type="button" aria-label="Scroll to top">
+             <i class="bi bi-arrow-up"></i>
+           </button>
+         </div>
+     
+         <!-- WhatsApp -->
+         <div class="float-wrap">
+           <span class="float-label">WhatsApp</span>
+           <a class="float-btn" id="floatWA" href="#" target="_blank" rel="noopener noreferrer" aria-label="Chat WhatsApp">
+             <i class="bi bi-whatsapp"></i>
+           </a>
+         </div>
+       </div>
+       <!-- =========================
+            END TAMBAHAN
+            ========================= -->
      
        <!-- Bootstrap JS (defer) -->
        <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
@@ -399,12 +544,62 @@
                dateLabel: "Jun 2, 2025",
                img: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=1600&q=80",
                alt: "Miniature house model representing real estate"
+             },
+     
+             /* =========================
+                TAMBAHAN: 3 BLOG LAGI
+                Pastikan slug ini kamu tambahkan juga di post.html -> POSTS
+                ========================= */
+             {
+               slug: "property-portfolio-blueprint",
+               title: "Building a Property Portfolio: A Practical Blueprint for Beginners",
+               dateLabel: "Jun 18, 2025",
+               img: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1600&q=80",
+               alt: "City building and portfolio concept"
+             },
+             {
+               slug: "renovation-roi-playbook",
+               title: "Renovation ROI Playbook: Upgrades That Actually Increase Value",
+               dateLabel: "Jun 22, 2025",
+               img: "https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1600&q=80",
+               alt: "Renovation and blueprint tools"
+             },
+             {
+               slug: "rental-cashflow-essentials",
+               title: "Rental Cashflow Essentials: How to Read Income, Expense, and Risk",
+               dateLabel: "Jun 28, 2025",
+               img: "https://images.unsplash.com/photo-1554224154-22dec7ec8818?auto=format&fit=crop&w=1600&q=80",
+               alt: "Cashflow and finance planning"
              }
+             /* =========================
+                END TAMBAHAN
+                ========================= */
            ];
+     
+           /* =========================
+              TAMBAHAN: Pagination logic (Prev/Next) + page param
+              ========================= */
+           function qs(name){
+             return new URLSearchParams(window.location.search).get(name);
+           }
+           function clamp(n, min, max){
+             return Math.max(min, Math.min(max, n));
+           }
+     
+           const PER_PAGE = 6; // kamu bisa ubah tanpa ngubah struktur
+           const totalPosts = POSTS_INDEX.length;
+           const totalPages = Math.max(1, Math.ceil(totalPosts / PER_PAGE));
+     
+           const pageRaw = parseInt(qs('page') || '1', 10);
+           const currentPage = clamp(isNaN(pageRaw) ? 1 : pageRaw, 1, totalPages);
+     
+           const start = (currentPage - 1) * PER_PAGE;
+           const end = start + PER_PAGE;
+           const pageItems = POSTS_INDEX.slice(start, end);
      
            // Render grid (klik card -> post.html?post=slug)
            const grid = document.getElementById("postsGrid");
-           grid.innerHTML = POSTS_INDEX.map((p)=>`
+           grid.innerHTML = pageItems.map((p)=>`
              <div class="col-md-6 col-lg-4 reveal">
                <a class="post-card" href="post.html?post=${encodeURIComponent(p.slug)}" aria-label="${p.title}">
                  <div class="post-media">
@@ -415,6 +610,32 @@
                </a>
              </div>
            `).join("");
+     
+           // Setup pager
+           const pagerWrap = document.getElementById('pagerWrap');
+           const pagerPrev = document.getElementById('pagerPrev');
+           const pagerNext = document.getElementById('pagerNext');
+           const pagerInfo = document.getElementById('pagerInfo');
+     
+           if(totalPages > 1){
+             pagerWrap.style.display = "";
+             pagerInfo.textContent = `Page ${currentPage} / ${totalPages}`;
+     
+             const prevPage = currentPage - 1;
+             const nextPage = currentPage + 1;
+     
+             // link prev/next
+             pagerPrev.href = prevPage >= 1 ? `blog.html?page=${prevPage}` : '#';
+             pagerNext.href = nextPage <= totalPages ? `blog.html?page=${nextPage}` : '#';
+     
+             pagerPrev.setAttribute('aria-disabled', prevPage >= 1 ? 'false' : 'true');
+             pagerNext.setAttribute('aria-disabled', nextPage <= totalPages ? 'false' : 'true');
+           } else {
+             pagerWrap.style.display = "none";
+           }
+           /* =========================
+              END TAMBAHAN
+              ========================= */
      
            // ========= 2) YEAR =========
            const y = new Date().getFullYear();
@@ -463,6 +684,36 @@
              });
            }, { threshold: 0.12 });
            items.forEach(el => io.observe(el));
+     
+           /* =========================
+              TAMBAHAN: Floating WhatsApp + Scroll Up
+              ========================= */
+           const WA_NUMBER = "6281234567890"; // samakan dengan post.html
+           const WA_DEFAULT_MESSAGE = "Halo Kurva, saya ingin konsultasi terkait kebutuhan saya. Saya menghubungi dari halaman Journal.";
+           const waText = encodeURIComponent(WA_DEFAULT_MESSAGE);
+     
+           const floatWA = document.getElementById('floatWA');
+           if(floatWA){
+             floatWA.href = `https://wa.me/${WA_NUMBER}?text=${waText}`;
+           }
+     
+           const floatUp = document.getElementById('floatUp');
+           function toggleUp(){
+             if(!floatUp) return;
+             const show = window.scrollY > 420;
+             floatUp.classList.toggle('is-hidden', !show);
+           }
+           toggleUp();
+           window.addEventListener('scroll', toggleUp, { passive:true });
+     
+           if(floatUp){
+             floatUp.addEventListener('click', ()=>{
+               window.scrollTo({ top: 0, behavior: 'smooth' });
+             });
+           }
+           /* =========================
+              END TAMBAHAN
+              ========================= */
          })();
        </script>
      </body>
