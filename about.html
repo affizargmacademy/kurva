@@ -1,0 +1,755 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+
+  <title>Kurva — About Us</title>
+  <meta name="description" content="About Kurva: kami membangun ruang modern dengan purpose, craft, dan kualitas yang konsisten—dari konsep hingga eksekusi." />
+
+  <!-- Author + Keywords -->
+  <meta name="author" content="Muhammad Affizar Ibrahim Alkautsar" />
+  <meta name="keywords" content="Muhammad Affizar Ibrahim Alkautsar, Kurva, About Us, studio arsitektur, desain modern, interior, konstruksi, development" />
+
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+  <link rel="canonical" href="https://example.com/about.html" />
+
+  <meta name="theme-color" content="#000000" />
+  <meta name="color-scheme" content="dark light" />
+
+  <!-- Performance hints -->
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+  <link rel="dns-prefetch" href="https://cdn.jsdelivr.net" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+  <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
+  <link rel="preconnect" href="https://images.unsplash.com" crossorigin />
+  <link rel="dns-prefetch" href="https://images.unsplash.com" />
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <!-- Open Graph -->
+  <meta property="og:site_name" content="Kurva" />
+  <meta property="og:title" content="Kurva — About Us" />
+  <meta property="og:description" content="We create more than buildings. We shape environments with purpose—crafted with care and delivered with confidence." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://example.com/about.html" />
+  <meta property="og:image" content="https://images.unsplash.com/photo-1496307653780-42ee777d4833?auto=format&fit=crop&w=1200&q=80" />
+  <meta property="og:locale" content="id_ID" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Kurva — About Us" />
+  <meta name="twitter:description" content="We create more than buildings. We shape environments with purpose—crafted with care and delivered with confidence." />
+  <meta name="twitter:image" content="https://images.unsplash.com/photo-1496307653780-42ee777d4833?auto=format&fit=crop&w=1200&q=80" />
+
+  <!-- Favicon pack -->
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="icon" href="/assets/favicons/favicon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="/assets/favicons/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <meta name="apple-mobile-web-app-title" content="Kurva" />
+  <meta name="application-name" content="Kurva" />
+  <meta name="msapplication-TileColor" content="#000000" />
+
+  <!-- Bootstrap -->
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    crossorigin="anonymous"
+  />
+
+  <!-- Icons -->
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    crossorigin="anonymous"
+  />
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"AboutPage",
+    "name":"Kurva — About Us",
+    "url":"https://example.com/about.html",
+    "inLanguage":"id-ID",
+    "isPartOf":{"@type":"WebSite","name":"Kurva","url":"https://example.com/"},
+    "author":{"@type":"Person","name":"Muhammad Affizar Ibrahim Alkautsar"}
+  }
+  </script>
+
+  <!-- Global theme (dark) — SAME system as index/projects -->
+  <style>
+    :root{
+      --bg:#000;
+      --text:rgba(255,255,255,.92);
+      --muted:rgba(255,255,255,.62);
+      --muted2:rgba(255,255,255,.42);
+      --line:rgba(255,255,255,.10);
+      --line2:rgba(255,255,255,.16);
+      --shadow:0 18px 50px rgba(0,0,0,.55);
+      --r-xl:22px;
+      --r-lg:18px;
+      --r-md:14px;
+      --ease:cubic-bezier(.2,.8,.2,1);
+      --ease2:cubic-bezier(.16,1,.3,1);
+      --font-ui:"Inter",system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+      --font-display:"Montserrat",system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+    }
+    html{ scroll-behavior:smooth; }
+    body{
+      font-family:var(--font-ui);
+      background:var(--bg);
+      color:var(--text);
+      overflow-x:hidden;
+      margin:0;
+      padding-top:0 !important;
+    }
+    a{ color:inherit; text-decoration:none; }
+    .container{ max-width:1180px; }
+    .soft-line{ border-top:1px solid var(--line); }
+    .glass{
+      background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+      border:1px solid var(--line);
+      border-radius:var(--r-xl);
+      box-shadow:var(--shadow);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+    }
+    .btn-pill{
+      border-radius:999px;
+      padding:.65rem 1rem;
+      border:1px solid var(--line2);
+      background:rgba(255,255,255,.06);
+      color:var(--text);
+      transition: transform .2s var(--ease), background .2s var(--ease), border-color .2s var(--ease);
+    }
+    .btn-pill:hover{ transform: translateY(-1px); background:rgba(255,255,255,.09); border-color:rgba(255,255,255,.22); }
+    .btn-pill:focus{ outline:none; box-shadow:0 0 0 .25rem rgba(255,255,255,.12); }
+
+    .k-brand{
+      display:flex; align-items:center; gap:.6rem;
+      letter-spacing:.2px;
+      font-family:var(--font-display);
+      font-weight:400;
+    }
+    .k-mark{
+      width:18px; height:18px; border-radius:6px;
+      border:1px solid rgba(255,255,255,.24);
+      background: radial-gradient(circle at 30% 30%, rgba(255,255,255,.18), rgba(255,255,255,.02));
+      box-shadow:0 0 0 1px rgba(255,255,255,.06) inset;
+    }
+
+    .reveal{ opacity:0; transform: translateY(14px); transition: opacity .8s var(--ease2), transform .8s var(--ease2); }
+    .reveal.is-in{ opacity:1; transform:none; }
+
+    header{ margin-top:0 !important; }
+    footer{ padding-bottom:4rem; }
+
+    /* Page typography (match PDF: thin, airy) */
+    .page-hero{ padding-top: 28px !important; padding-bottom: 18px !important; }
+    .page-title{
+      font-family: var(--font-display);
+      font-weight:300;
+      letter-spacing:.2px;
+      font-size: clamp(44px, 4.6vw, 64px);
+      line-height:1.05;
+      margin: 0 0 10px;
+    }
+    .page-copy{
+      color: var(--muted);
+      font-size: 12.5px;
+      line-height: 1.75;
+      max-width: 92ch;
+    }
+    .hero-img{
+      border-radius: 18px;
+      overflow:hidden;
+      border:1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.04);
+      box-shadow: 0 22px 70px rgba(0,0,0,.55);
+    }
+    .hero-img img{ width:100%; height:100%; display:block; object-fit:cover; }
+
+    /* Section headings like PDF */
+    .sec-title{
+      font-family: var(--font-display);
+      font-weight:300;
+      letter-spacing:.2px;
+      font-size: clamp(28px, 3vw, 42px);
+      margin:0;
+    }
+    .sec-body{
+      color: var(--muted);
+      font-size: 12.5px;
+      line-height: 1.8;
+      max-width: 70ch;
+    }
+
+    /* Philosophy list (right column) */
+    .ph-item{
+      display:flex;
+      gap: 18px;
+      padding: 10px 0;
+    }
+    .ph-ico{
+      width:40px; height:40px;
+      display:grid; place-items:center;
+      border-radius: 999px;
+      border:1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.03);
+      color: rgba(255,255,255,.78);
+      flex: 0 0 auto;
+    }
+    .ph-title{
+      font-weight:500;
+      color: rgba(255,255,255,.85);
+      margin:0 0 4px;
+      font-size: 13px;
+    }
+    .ph-desc{
+      margin:0;
+      color: var(--muted2);
+      font-size: 12px;
+      line-height: 1.65;
+      max-width: 52ch;
+    }
+
+    /* Achievement grid (4 stats) */
+    .ach-grid{
+      display:grid;
+      grid-template-columns: repeat(2, minmax(0,1fr));
+      gap: 34px 70px;
+    }
+    @media (max-width: 767px){
+      .ach-grid{ grid-template-columns: 1fr; gap: 22px; }
+    }
+    .ach-num{
+      font-family: var(--font-display);
+      font-weight:300;
+      font-size: 26px;
+      letter-spacing:.2px;
+      margin:0 0 6px;
+    }
+    .ach-label{
+      color: rgba(255,255,255,.72);
+      font-size: 12.5px;
+      margin:0 0 8px;
+    }
+    .ach-desc{
+      color: var(--muted2);
+      font-size: 12px;
+      line-height: 1.65;
+      margin:0;
+      max-width: 52ch;
+    }
+
+    /* Team cards */
+    .team-grid{
+      display:grid;
+      grid-template-columns: repeat(2, minmax(0,1fr));
+      gap: 36px 44px;
+    }
+    @media (max-width: 767px){
+      .team-grid{ grid-template-columns: 1fr; }
+    }
+    .team-card{ max-width: 320px; }
+    .team-photo{
+      border-radius: 0;
+      overflow:hidden;
+      border:1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.04);
+      box-shadow: 0 18px 55px rgba(0,0,0,.45);
+      aspect-ratio: 1 / 1;
+    }
+    .team-photo img{ width:100%; height:100%; object-fit:cover; display:block; }
+    .team-name{
+      font-family: var(--font-display);
+      font-weight:300;
+      margin: 12px 0 4px;
+      font-size: 16px;
+      color: rgba(255,255,255,.88);
+    }
+    .team-role{
+      margin:0;
+      color: var(--muted2);
+      font-size: 12px;
+    }
+
+    /* CTA section with 4-image band */
+    .cta-title{
+      font-family: var(--font-display);
+      font-weight:300;
+      letter-spacing:.2px;
+      font-size: clamp(26px, 3.4vw, 42px);
+      margin:0 0 6px;
+    }
+    .cta-sub{
+      color: var(--muted2);
+      font-size: 12px;
+      margin:0;
+    }
+    .cta-band{
+      display:grid;
+      grid-template-columns: repeat(4, minmax(0,1fr));
+      gap: 0;
+      border-radius: 0;
+      overflow:hidden;
+      border: 1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.02);
+    }
+    @media (max-width: 991px){
+      .cta-band{ grid-template-columns: repeat(2, 1fr); }
+    }
+    .cta-band .img{
+      position:relative;
+      aspect-ratio: 16 / 9;
+      overflow:hidden;
+      border-right: 1px solid rgba(255,255,255,.06);
+    }
+    .cta-band .img:nth-child(4),
+    .cta-band .img:nth-child(2){ border-right:0; }
+    @media (max-width: 991px){
+      .cta-band .img{ border-right:0; border-bottom:1px solid rgba(255,255,255,.06); }
+      .cta-band .img:nth-last-child(-n+2){ border-bottom:0; }
+    }
+    .cta-band img{ width:100%; height:100%; object-fit:cover; display:block; filter: saturate(.96) contrast(1.02); }
+    .cta-band .img::after{
+      content:"";
+      position:absolute; inset:0;
+      background: linear-gradient(180deg, rgba(0,0,0,.10), rgba(0,0,0,.38));
+      pointer-events:none;
+    }
+
+    /* Marquee strip (same style as other pages) */
+    .big-strip{
+      margin-top: 22px;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      background: rgba(255,255,255,.02);
+      overflow:hidden;
+    }
+    .big-strip .track{
+      display:flex;
+      white-space:nowrap;
+      padding: 16px 0;
+      animation: strip 18s linear infinite;
+      font-family: var(--font-display);
+      font-weight:300;
+      letter-spacing: 3px;
+      color: rgba(255,255,255,.62);
+      text-transform: uppercase;
+      font-size: clamp(24px, 2.8vw, 40px);
+    }
+    .big-strip .track span{ padding: 0 20px; }
+    @keyframes strip{
+      from{ transform: translateX(0); }
+      to{ transform: translateX(-50%); }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVBAR (SAMA seperti index.html) -->
+  <header class="position-sticky top-0 z-3" style="background:rgba(0,0,0,.72); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom:1px solid rgba(255,255,255,.08);">
+    <div class="container py-3 d-flex align-items-center justify-content-between">
+      <a href="index.html#home" class="k-brand" aria-label="Go to Home">
+        <span class="k-mark" aria-hidden="true"></span>
+        <span>Kurva</span>
+      </a>
+
+      <div class="d-flex align-items-center gap-2">
+        <a href="index.html#contact" class="btn btn-pill d-none d-md-inline-flex">Contact Us</a>
+        <button id="menuBtn" class="btn btn-pill d-inline-flex align-items-center gap-2" type="button" aria-label="Open menu" aria-controls="overlayNav" aria-expanded="false">
+          <span class="d-none d-sm-inline">Menu</span>
+          <i class="bi bi-list fs-5"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- OVERLAY NAV (SAMA seperti index.html) -->
+  <div id="overlayNav" class="overlay-nav" aria-hidden="true">
+    <div class="container h-100 d-flex flex-column">
+      <div class="d-flex align-items-center justify-content-between py-4">
+        <a href="index.html#home" class="k-brand" data-close aria-label="Go to Home">
+          <span class="k-mark" aria-hidden="true"></span>
+          <span>Kurva</span>
+        </a>
+        <div class="d-flex align-items-center gap-2">
+          <a href="index.html#contact" class="btn btn-pill">Contact Us</a>
+          <button id="closeBtn" class="btn btn-pill" type="button" aria-label="Close menu" data-close>
+            <i class="bi bi-x-lg"></i>
+          </button>
+        </div>
+      </div>
+
+      <div class="flex-grow-1 d-flex align-items-center justify-content-center">
+        <nav class="text-center overlay-links">
+          <a class="overlay-link" href="index.html" data-close>Home</a>
+          <a class="overlay-link" href="projects.html" data-close>Our Projects</a>
+          <a class="overlay-link" href="about.html" data-close>About Us</a>
+          <a class="overlay-link" href="blog.html" data-close>Blog</a>
+        </nav>
+      </div>
+
+      <div class="pb-4 text-center text-white-50 small">
+        <span>© <span id="yearNow"></span> Kurva. Crafted for performance & SEO.</span>
+      </div>
+    </div>
+  </div>
+
+  <style>
+    .overlay-nav{
+      position:fixed; inset:0;
+      background:rgba(0,0,0,.92);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      opacity:0; pointer-events:none;
+      transition: opacity .28s var(--ease);
+      z-index: 9999;
+    }
+    .overlay-nav.open{ opacity:1; pointer-events:auto; }
+    .overlay-links{
+      display:flex; flex-direction:column; gap:34px;
+      font-family: var(--font-display);
+      letter-spacing:.4px;
+    }
+    .overlay-link{
+      font-size: clamp(34px, 5vw, 56px);
+      font-weight:300;
+      color: rgba(255,255,255,.90);
+      transition: transform .22s var(--ease), opacity .22s var(--ease);
+    }
+    .overlay-link:hover{ transform: translateY(-2px); opacity: .95; }
+  </style>
+
+  <!-- MAIN -->
+  <main>
+    <!-- HERO (About Kurva) -->
+    <section class="container page-hero">
+      <div class="soft-line mb-4" style="opacity:.75"></div>
+
+      <div class="row">
+        <div class="col-lg-8 reveal">
+          <h1 class="page-title">About Kurva</h1>
+
+          <p class="page-copy mb-3">
+            At Kurva, we create more than buildings. We shape environments where people live with purpose, grow with confidence,
+            and thrive in comfort. With a strong focus on design, innovation, and lasting value, we specialize in residential and
+            mixed-use developments that reflect the way people want to live today and tomorrow.
+          </p>
+          <p class="page-copy mb-0">
+            Each project begins with a clear vision and is brought to life through thoughtful planning, sustainable practices,
+            and attention to detail. From early concept to final delivery, we are committed to quality, function, and timeless appeal.
+          </p>
+        </div>
+      </div>
+
+      <div class="mt-4 hero-img reveal">
+        <!-- Big image like PDF (sunset modern house) -->
+        <img
+          src="https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=1800&q=80"
+          alt="Modern home at sunset"
+          decoding="async"
+          fetchpriority="high"
+        />
+      </div>
+    </section>
+
+    <!-- Our Story (2 columns like PDF) -->
+    <section class="container py-5">
+      <div class="soft-line mb-4"></div>
+
+      <div class="row g-4 align-items-start">
+        <div class="col-lg-5 reveal">
+          <h2 class="sec-title">Our Story</h2>
+        </div>
+
+        <div class="col-lg-7 reveal">
+          <p class="sec-body mb-3">
+            Kurva began with a simple idea: to build better places for people to live and grow. With a foundation in architecture,
+            development, and client service, our founders set out to create a company that puts people at the center of every decision.
+            The goal was to blend design excellence with thoughtful execution and create more than just buildings by delivering spaces
+            with lasting purpose.
+          </p>
+          <p class="sec-body mb-0">
+            What started as a focused vision has evolved into a growing portfolio of residential and mixed-use projects across key markets.
+            Through a commitment to transparency, collaboration, and quality, we’ve built lasting relationships and earned the trust of homeowners,
+            investors, and communities alike.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Our Philosophy (left title, right stacked points with icons) -->
+    <section class="container py-5">
+      <div class="soft-line mb-4"></div>
+
+      <div class="row g-4 align-items-start">
+        <div class="col-lg-5 reveal">
+          <h2 class="sec-title">Our Philosophy</h2>
+        </div>
+
+        <div class="col-lg-7">
+          <div class="ph-item reveal">
+            <div class="ph-ico" aria-hidden="true"><i class="bi bi-rulers fs-5"></i></div>
+            <div>
+              <p class="ph-title">We design with purpose</p>
+              <p class="ph-desc">Every space is planned to support the way people live, work, and connect.</p>
+            </div>
+          </div>
+
+          <div class="ph-item reveal">
+            <div class="ph-ico" aria-hidden="true"><i class="bi bi-heart fs-5"></i></div>
+            <div>
+              <p class="ph-title">We build with care</p>
+              <p class="ph-desc">From materials to craftsmanship, we uphold high standards in every detail.</p>
+            </div>
+          </div>
+
+          <div class="ph-item reveal">
+            <div class="ph-ico" aria-hidden="true"><i class="bi bi-hand-thumbs-up fs-5"></i></div>
+            <div>
+              <p class="ph-title">We deliver with confidence</p>
+              <p class="ph-desc">Our team manages each step of the process to ensure a smooth and rewarding experience for every client.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Our Achievement (left title, right 2x2 stats like PDF) -->
+    <section class="container py-5">
+      <div class="soft-line mb-4"></div>
+
+      <div class="row g-4 align-items-start">
+        <div class="col-lg-5 reveal">
+          <h2 class="sec-title">Our Achievement</h2>
+        </div>
+
+        <div class="col-lg-7">
+          <div class="ach-grid reveal">
+            <div>
+              <p class="ach-num">120+</p>
+              <p class="ach-label">Units delivered</p>
+              <p class="ach-desc">Delivering quality homes with care, precision, and attention to detail.</p>
+            </div>
+
+            <div>
+              <p class="ach-num">15+</p>
+              <p class="ach-label">Years of experience</p>
+              <p class="ach-desc">Bringing experience and consistency to every project.</p>
+            </div>
+
+            <div>
+              <p class="ach-num">20+</p>
+              <p class="ach-label">Completed Projects</p>
+              <p class="ach-desc">Building with purpose to meet both lifestyle and long-term value.</p>
+            </div>
+
+            <div>
+              <p class="ach-num">98%</p>
+              <p class="ach-label">Clients satisfaction</p>
+              <p class="ach-desc">Focused on experience, trust, and smooth execution.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Our Team (2x2 photos like PDF) -->
+    <section class="container py-5">
+      <div class="soft-line mb-4"></div>
+
+      <div class="row g-4 align-items-start">
+        <div class="col-lg-5 reveal">
+          <h2 class="sec-title">Our Team</h2>
+        </div>
+
+        <div class="col-lg-7">
+          <div class="team-grid">
+            <div class="team-card reveal">
+              <div class="team-photo">
+                <img
+                  src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=900&q=80"
+                  alt="Elena Marlowe portrait"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+              <div class="team-name">Elena Marlowe</div>
+              <p class="team-role">Founder & Creative Director</p>
+            </div>
+
+            <div class="team-card reveal">
+              <div class="team-photo">
+                <img
+                  src="https://images.unsplash.com/photo-1520975916090-3105956dac38?auto=format&fit=crop&w=900&q=80"
+                  alt="Marcus Chen portrait"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+              <div class="team-name">Marcus Chen</div>
+              <p class="team-role">Head of Development</p>
+            </div>
+
+            <div class="team-card reveal">
+              <div class="team-photo">
+                <img
+                  src="https://images.unsplash.com/photo-1548142813-c348350df52b?auto=format&fit=crop&w=900&q=80"
+                  alt="Isabelle Hart portrait"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+              <div class="team-name">Isabelle Hart</div>
+              <p class="team-role">Client Relations Lead</p>
+            </div>
+
+            <div class="team-card reveal">
+              <div class="team-photo">
+                <img
+                  src="https://images.unsplash.com/photo-1544723795-3fb6469f5b39?auto=format&fit=crop&w=900&q=80"
+                  alt="David Monroe portrait"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+              <div class="team-name">David Monroe</div>
+              <p class="team-role">Project Architect</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA (center title + 4 images band + button) -->
+    <section class="container py-5">
+      <div class="soft-line mb-5"></div>
+
+      <div class="text-center reveal">
+        <h2 class="cta-title">Let’s Build Something Together</h2>
+        <p class="cta-sub">Ready to invest or find your next home? Get in touch with our team today.</p>
+      </div>
+
+      <div class="mt-4 cta-band reveal" aria-label="Project previews">
+        <div class="img">
+          <img src="https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=1400&q=80" alt="Project preview 1" loading="lazy" decoding="async">
+        </div>
+        <div class="img">
+          <img src="https://images.unsplash.com/photo-1484154218962-a197022b5858?auto=format&fit=crop&w=1400&q=80" alt="Project preview 2" loading="lazy" decoding="async">
+        </div>
+        <div class="img">
+          <img src="https://images.unsplash.com/photo-1496307653780-42ee777d4833?auto=format&fit=crop&w=1400&q=80" alt="Project preview 3" loading="lazy" decoding="async">
+        </div>
+        <div class="img">
+          <img src="https://images.unsplash.com/photo-1449247709967-d4461a6a6103?auto=format&fit=crop&w=1400&q=80" alt="Project preview 4" loading="lazy" decoding="async">
+        </div>
+      </div>
+
+      <div class="text-center mt-4 reveal">
+        <a class="btn btn-pill" href="index.html#contact">Contact Us</a>
+      </div>
+    </section>
+
+    <!-- Marquee strip (like PDF bottom) -->
+    <section class="big-strip" aria-hidden="true">
+      <div class="track">
+        <span>ARCHITECTURE • LIVING • SIMPLICITY • ARCHITECTURE •</span>
+        <span>ARCHITECTURE • LIVING • SIMPLICITY • ARCHITECTURE •</span>
+        <span>ARCHITECTURE • LIVING • SIMPLICITY • ARCHITECTURE •</span>
+        <span>ARCHITECTURE • LIVING • SIMPLICITY • ARCHITECTURE •</span>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER (SAMA seperti index.html) -->
+  <footer class="container py-5">
+    <div class="soft-line mb-4"></div>
+    <div class="row g-4">
+      <div class="col-lg-6">
+        <div class="k-brand mb-2">
+          <span class="k-mark" aria-hidden="true"></span>
+          <span>Kurva</span>
+        </div>
+        <p class="mb-0" style="color:var(--muted); max-width:60ch;">
+          Modern spaces—calm, functional, and crafted. Built on Bootstrap, optimized for SEO, AI Overview, and PageSpeed.
+        </p>
+      </div>
+      <div class="col-lg-6">
+        <div class="d-flex flex-wrap gap-2 justify-content-lg-end">
+          <a class="btn btn-pill" href="index.html#home">Top</a>
+          <a class="btn btn-pill" href="projects.html">Projects</a>
+          <a class="btn btn-pill" href="about.html">About</a>
+          <a class="btn btn-pill" href="index.html#contact">Contact</a>
+        </div>
+      </div>
+      <div class="col-12 small text-white-50">
+        © <span id="yearNow2"></span> Kurva • Author: Muhammad Affizar Ibrahim Alkautsar
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS (defer) -->
+  <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+
+  <!-- Interaction JS (defer) — same behavior as index/projects -->
+  <script defer>
+    (function(){
+      const y = new Date().getFullYear();
+      document.getElementById('yearNow').textContent = y;
+      document.getElementById('yearNow2').textContent = y;
+
+      const overlay = document.getElementById('overlayNav');
+      const menuBtn = document.getElementById('menuBtn');
+      const closeBtn = document.getElementById('closeBtn');
+
+      function openMenu(){
+        overlay.classList.add('open');
+        overlay.setAttribute('aria-hidden','false');
+        menuBtn.setAttribute('aria-expanded','true');
+        document.body.style.overflow = 'hidden';
+      }
+      function closeMenu(){
+        overlay.classList.remove('open');
+        overlay.setAttribute('aria-hidden','true');
+        menuBtn.setAttribute('aria-expanded','false');
+        document.body.style.overflow = '';
+      }
+
+      menuBtn.addEventListener('click', openMenu);
+      closeBtn.addEventListener('click', closeMenu);
+
+      overlay.addEventListener('click', (e)=>{
+        if(e.target === overlay) closeMenu();
+      });
+
+      document.querySelectorAll('[data-close]').forEach(el=>{
+        el.addEventListener('click', ()=> closeMenu());
+      });
+
+      document.addEventListener('keydown', (e)=>{
+        if(e.key === 'Escape' && overlay.classList.contains('open')) closeMenu();
+      });
+
+      const items = document.querySelectorAll('.reveal');
+      const io = new IntersectionObserver((entries)=>{
+        entries.forEach(ent=>{
+          if(ent.isIntersecting){
+            ent.target.classList.add('is-in');
+            io.unobserve(ent.target);
+          }
+        });
+      }, { threshold: 0.12 });
+      items.forEach(el => io.observe(el));
+    })();
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,470 @@
+<!-- =========================
+     blog.html
+     ========================= -->
+     <!doctype html>
+     <html lang="id">
+     <head>
+       <meta charset="utf-8" />
+       <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+     
+       <title>Kurva — Journal</title>
+       <meta name="description" content="The Kurva Journal: insight, ide, dan update seputar properti, desain, arsitektur modern, serta pengembangan ruang." />
+     
+       <meta name="author" content="Muhammad Affizar Ibrahim Alkautsar" />
+       <meta name="keywords" content="Muhammad Affizar Ibrahim Alkautsar, Kurva, blog arsitektur, desain modern, properti, real estate, interior, journal" />
+     
+       <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+       <link rel="canonical" href="https://example.com/blog.html" />
+     
+       <meta name="theme-color" content="#000000" />
+       <meta name="color-scheme" content="dark light" />
+     
+       <!-- Performance hints -->
+       <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+       <link rel="dns-prefetch" href="https://cdn.jsdelivr.net" />
+       <link rel="preconnect" href="https://fonts.googleapis.com" />
+       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+       <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+       <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
+       <link rel="preconnect" href="https://images.unsplash.com" crossorigin />
+       <link rel="dns-prefetch" href="https://images.unsplash.com" />
+     
+       <!-- Fonts -->
+       <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+     
+       <!-- Open Graph -->
+       <meta property="og:site_name" content="Kurva" />
+       <meta property="og:title" content="Kurva — Journal" />
+       <meta property="og:description" content="Insights, ideas, and updates from the world of property, design, and modern development." />
+       <meta property="og:type" content="website" />
+       <meta property="og:url" content="https://example.com/blog.html" />
+       <meta property="og:image" content="https://images.unsplash.com/photo-1496307653780-42ee777d4833?auto=format&fit=crop&w=1200&q=80" />
+       <meta property="og:locale" content="id_ID" />
+     
+       <!-- Twitter -->
+       <meta name="twitter:card" content="summary_large_image" />
+       <meta name="twitter:title" content="Kurva — Journal" />
+       <meta name="twitter:description" content="Insights, ideas, and updates from the world of property, design, and modern development." />
+       <meta name="twitter:image" content="https://images.unsplash.com/photo-1496307653780-42ee777d4833?auto=format&fit=crop&w=1200&q=80" />
+     
+       <!-- Favicon pack -->
+       <link rel="icon" href="/favicon.ico" sizes="any" />
+       <link rel="icon" href="/assets/favicons/favicon.svg" type="image/svg+xml" />
+       <link rel="apple-touch-icon" href="/assets/favicons/apple-touch-icon.png" />
+       <link rel="manifest" href="/site.webmanifest" />
+       <meta name="apple-mobile-web-app-title" content="Kurva" />
+       <meta name="application-name" content="Kurva" />
+       <meta name="msapplication-TileColor" content="#000000" />
+     
+       <!-- Bootstrap -->
+       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" crossorigin="anonymous" />
+     
+       <!-- Icons -->
+       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" crossorigin="anonymous" />
+     
+       <!-- Structured Data -->
+       <script type="application/ld+json">
+       {
+         "@context":"https://schema.org",
+         "@type":"Blog",
+         "name":"The Kurva Journal",
+         "url":"https://example.com/blog.html",
+         "inLanguage":"id-ID",
+         "author":{"@type":"Person","name":"Muhammad Affizar Ibrahim Alkautsar"},
+         "publisher":{"@type":"Organization","name":"Kurva","url":"https://example.com/"}
+       }
+       </script>
+     
+       <style>
+         :root{
+           --bg:#000;
+           --text:rgba(255,255,255,.92);
+           --muted:rgba(255,255,255,.62);
+           --muted2:rgba(255,255,255,.42);
+           --line:rgba(255,255,255,.10);
+           --line2:rgba(255,255,255,.16);
+           --shadow:0 18px 50px rgba(0,0,0,.55);
+           --r-xl:22px;
+           --r-lg:18px;
+           --r-md:14px;
+           --ease:cubic-bezier(.2,.8,.2,1);
+           --ease2:cubic-bezier(.16,1,.3,1);
+           --font-ui:"Inter",system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+           --font-display:"Montserrat",system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+         }
+         html{ scroll-behavior:smooth; }
+         body{
+           font-family:var(--font-ui);
+           background:var(--bg);
+           color:var(--text);
+           overflow-x:hidden;
+           margin:0;
+           padding-top:0 !important;
+         }
+         a{ color:inherit; text-decoration:none; }
+         .container{ max-width:1180px; }
+         .soft-line{ border-top:1px solid var(--line); }
+         .btn-pill{
+           border-radius:999px;
+           padding:.65rem 1rem;
+           border:1px solid var(--line2);
+           background:rgba(255,255,255,.06);
+           color:var(--text);
+           transition: transform .2s var(--ease), background .2s var(--ease), border-color .2s var(--ease);
+         }
+         .btn-pill:hover{ transform: translateY(-1px); background:rgba(255,255,255,.09); border-color:rgba(255,255,255,.22); }
+         .btn-pill:focus{ outline:none; box-shadow:0 0 0 .25rem rgba(255,255,255,.12); }
+     
+         .k-brand{
+           display:flex; align-items:center; gap:.6rem;
+           letter-spacing:.2px;
+           font-family:var(--font-display);
+           font-weight:400;
+         }
+         .k-mark{
+           width:18px; height:18px; border-radius:6px;
+           border:1px solid rgba(255,255,255,.24);
+           background: radial-gradient(circle at 30% 30%, rgba(255,255,255,.18), rgba(255,255,255,.02));
+           box-shadow:0 0 0 1px rgba(255,255,255,.06) inset;
+         }
+     
+         .reveal{ opacity:0; transform: translateY(14px); transition: opacity .8s var(--ease2), transform .8s var(--ease2); }
+         .reveal.is-in{ opacity:1; transform:none; }
+     
+         header{ margin-top:0 !important; }
+         footer{ padding-bottom:4rem; }
+     
+         .page-hero{ padding-top: 28px !important; padding-bottom: 10px !important; }
+         .page-title{
+           font-family: var(--font-display);
+           font-weight:300;
+           letter-spacing:.2px;
+           font-size: clamp(44px, 4.6vw, 66px);
+           line-height:1.05;
+           margin: 0 0 10px;
+         }
+         .page-sub{
+           color: var(--muted);
+           font-size: 12.5px;
+           line-height: 1.75;
+           max-width: 92ch;
+           margin: 0;
+         }
+     
+         /* Cards */
+         .post-card{ display:block; }
+         .post-media{
+           border-radius: 0;
+           overflow:hidden;
+           border:1px solid rgba(255,255,255,.12);
+           background: rgba(255,255,255,.04);
+           box-shadow: 0 18px 55px rgba(0,0,0,.45);
+           aspect-ratio: 16 / 9;
+           position:relative;
+         }
+         .post-media img{
+           width:100%;
+           height:100%;
+           object-fit:cover;
+           display:block;
+           transition: transform .35s var(--ease), filter .35s var(--ease);
+           filter:saturate(.98) contrast(1.02);
+         }
+         .post-card:hover .post-media img{
+           transform: scale(1.03);
+           filter:saturate(1.05) contrast(1.05);
+         }
+         .post-title{
+           margin: 12px 0 6px;
+           font-weight:500;
+           color: rgba(255,255,255,.86);
+           font-size: 13px;
+           line-height: 1.4;
+           max-width: 46ch;
+         }
+         .post-date{
+           color: rgba(255,255,255,.52);
+           font-size: 11px;
+           margin: 0;
+         }
+     
+         .big-strip{
+           margin-top: 34px;
+           border-top: 1px solid var(--line);
+           border-bottom: 1px solid var(--line);
+           background: rgba(255,255,255,.02);
+           overflow:hidden;
+         }
+         .big-strip .track{
+           display:flex;
+           white-space:nowrap;
+           padding: 16px 0;
+           animation: strip 18s linear infinite;
+           font-family: var(--font-display);
+           font-weight:300;
+           letter-spacing: 3px;
+           color: rgba(255,255,255,.62);
+           text-transform: uppercase;
+           font-size: clamp(24px, 2.8vw, 40px);
+         }
+         .big-strip .track span{ padding: 0 20px; }
+         @keyframes strip{
+           from{ transform: translateX(0); }
+           to{ transform: translateX(-50%); }
+         }
+       </style>
+     </head>
+     
+     <body>
+     
+       <!-- NAVBAR -->
+       <header class="position-sticky top-0 z-3" style="background:rgba(0,0,0,.72); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom:1px solid rgba(255,255,255,.08);">
+         <div class="container py-3 d-flex align-items-center justify-content-between">
+           <a href="index.html#home" class="k-brand" aria-label="Go to Home">
+             <span class="k-mark" aria-hidden="true"></span>
+             <span>Kurva</span>
+           </a>
+     
+           <div class="d-flex align-items-center gap-2">
+             <a href="index.html#contact" class="btn btn-pill d-none d-md-inline-flex">Contact Us</a>
+             <button id="menuBtn" class="btn btn-pill d-inline-flex align-items-center gap-2" type="button" aria-label="Open menu" aria-controls="overlayNav" aria-expanded="false">
+               <span class="d-none d-sm-inline">Menu</span>
+               <i class="bi bi-list fs-5"></i>
+             </button>
+           </div>
+         </div>
+       </header>
+     
+       <!-- OVERLAY NAV -->
+       <div id="overlayNav" class="overlay-nav" aria-hidden="true">
+         <div class="container h-100 d-flex flex-column">
+           <div class="d-flex align-items-center justify-content-between py-4">
+             <a href="index.html#home" class="k-brand" data-close aria-label="Go to Home">
+               <span class="k-mark" aria-hidden="true"></span>
+               <span>Kurva</span>
+             </a>
+             <div class="d-flex align-items-center gap-2">
+               <a href="index.html#contact" class="btn btn-pill">Contact Us</a>
+               <button id="closeBtn" class="btn btn-pill" type="button" aria-label="Close menu" data-close>
+                 <i class="bi bi-x-lg"></i>
+               </button>
+             </div>
+           </div>
+     
+           <div class="flex-grow-1 d-flex align-items-center justify-content-center">
+             <nav class="text-center overlay-links" aria-label="Site">
+               <a class="overlay-link" href="index.html#home" data-close>Home</a>
+               <a class="overlay-link" href="projects.html" data-close>Our Projects</a>
+               <a class="overlay-link" href="about.html" data-close>About Us</a>
+               <a class="overlay-link" href="blog.html" data-close>Blog</a>
+             </nav>
+           </div>
+     
+           <div class="pb-4 text-center text-white-50 small">
+             <span>© <span id="yearNow"></span> Kurva. Crafted for performance & SEO.</span>
+           </div>
+         </div>
+       </div>
+     
+       <style>
+         .overlay-nav{
+           position:fixed; inset:0;
+           background:rgba(0,0,0,.92);
+           backdrop-filter: blur(16px);
+           -webkit-backdrop-filter: blur(16px);
+           opacity:0; pointer-events:none;
+           transition: opacity .28s var(--ease);
+           z-index: 9999;
+         }
+         .overlay-nav.open{ opacity:1; pointer-events:auto; }
+         .overlay-links{
+           display:flex; flex-direction:column; gap:34px;
+           font-family: var(--font-display);
+           letter-spacing:.4px;
+         }
+         .overlay-link{
+           font-size: clamp(34px, 5vw, 56px);
+           font-weight:300;
+           color: rgba(255,255,255,.90);
+           transition: transform .22s var(--ease), opacity .22s var(--ease);
+         }
+         .overlay-link:hover{ transform: translateY(-2px); opacity: .95; }
+       </style>
+     
+       <main>
+         <!-- HERO -->
+         <section class="container page-hero">
+           <div class="soft-line mb-4" style="opacity:.75"></div>
+           <div class="row">
+             <div class="col-lg-8 reveal">
+               <h1 class="page-title">The Kurva Journal</h1>
+               <p class="page-sub">
+                 Insights, ideas, and updates from the world of property, design, and modern development.
+               </p>
+             </div>
+           </div>
+         </section>
+     
+         <!-- GRID POSTS -->
+         <section class="container pb-4">
+           <div class="row g-4" id="postsGrid"></div>
+         </section>
+     
+         <!-- MARQUEE STRIP -->
+         <section class="big-strip" aria-hidden="true">
+           <div class="track">
+             <span>ARCHITECTURE • LIVING • SIMPLICITY • ARCHITECTURE •</span>
+             <span>ARCHITECTURE • LIVING • SIMPLICITY • ARCHITECTURE •</span>
+             <span>ARCHITECTURE • LIVING • SIMPLICITY • ARCHITECTURE •</span>
+             <span>ARCHITECTURE • LIVING • SIMPLICITY • ARCHITECTURE •</span>
+           </div>
+         </section>
+       </main>
+     
+       <!-- FOOTER -->
+       <footer class="container py-5">
+         <div class="soft-line mb-4"></div>
+         <div class="row g-4">
+           <div class="col-lg-6">
+             <div class="k-brand mb-2">
+               <span class="k-mark" aria-hidden="true"></span>
+               <span>Kurva</span>
+             </div>
+             <p class="mb-0" style="color:var(--muted); max-width:60ch;">
+               Modern spaces—calm, functional, and crafted. Built on Bootstrap, optimized for SEO, AI Overview, and PageSpeed.
+             </p>
+           </div>
+           <div class="col-lg-6">
+             <div class="d-flex flex-wrap gap-2 justify-content-lg-end">
+               <a class="btn btn-pill" href="index.html#home">Top</a>
+               <a class="btn btn-pill" href="projects.html">Projects</a>
+               <a class="btn btn-pill" href="about.html">About</a>
+               <a class="btn btn-pill" href="blog.html">Blog</a>
+               <a class="btn btn-pill" href="index.html#contact">Contact</a>
+             </div>
+           </div>
+           <div class="col-12 small text-white-50">
+             © <span id="yearNow2"></span> Kurva • Author: Muhammad Affizar Ibrahim Alkautsar
+           </div>
+         </div>
+       </footer>
+     
+       <!-- Bootstrap JS (defer) -->
+       <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+     
+       <!-- Page JS (defer): render posts + overlay nav + reveal -->
+       <script defer>
+         (function(){
+           // ========= 1) DATA INDEX (sinkron dengan post.html) =========
+           // Pastikan slug ini ADA juga di POST.html bagian POSTS.
+           const POSTS_INDEX = [
+             {
+               slug: "the-future-of-urban-living",
+               title: "The Future of Urban Living: Why Co-Living Spaces Are on the Rise",
+               dateLabel: "Jun 2, 2025",
+               img: "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=1600&q=80",
+               alt: "Co-living modern interior"
+             },
+             {
+               slug: "real-estate-smart-investment",
+               title: "Getting Started in Real Estate: A Beginner’s Guide to Smart Investment",
+               dateLabel: "Jun 2, 2025",
+               img: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=1600&q=80",
+               alt: "Planner and miniature house concept"
+             },
+             {
+               slug: "vacation-rental-properties",
+               title: "Vacation Rental Properties: How to Turn Getaways Into Profitable Assets",
+               dateLabel: "Jun 2, 2025",
+               img: "https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=1600&q=80",
+               alt: "Vacation rental house with pool"
+             },
+             {
+               slug: "sustainable-living",
+               title: "Sustainable Living: How Eco-Friendly Homes Are Shaping the Future",
+               dateLabel: "Jun 2, 2025",
+               img: "https://images.unsplash.com/photo-1509395176047-4a66953fd231?auto=format&fit=crop&w=1600&q=80",
+               alt: "Eco-friendly house with solar panels"
+             },
+             {
+               slug: "the-rise-of-smart-homes",
+               title: "The Rise of Smart Homes: How Technology Is Reshaping Everyday Living",
+               dateLabel: "Jun 2, 2025",
+               img: "https://images.unsplash.com/photo-1558002038-1055907df827?auto=format&fit=crop&w=1600&q=80",
+               alt: "Smart home control on smartphone"
+             },
+             {
+               slug: "real-estate-remains-resilient",
+               title: "Why Real Estate Remains One of the Most Resilient Investments",
+               dateLabel: "Jun 2, 2025",
+               img: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=1600&q=80",
+               alt: "Miniature house model representing real estate"
+             }
+           ];
+     
+           // Render grid (klik card -> post.html?post=slug)
+           const grid = document.getElementById("postsGrid");
+           grid.innerHTML = POSTS_INDEX.map((p)=>`
+             <div class="col-md-6 col-lg-4 reveal">
+               <a class="post-card" href="post.html?post=${encodeURIComponent(p.slug)}" aria-label="${p.title}">
+                 <div class="post-media">
+                   <img src="${p.img}" alt="${p.alt}" loading="lazy" decoding="async" />
+                 </div>
+                 <div class="post-title">${p.title}</div>
+                 <p class="post-date">${p.dateLabel}</p>
+               </a>
+             </div>
+           `).join("");
+     
+           // ========= 2) YEAR =========
+           const y = new Date().getFullYear();
+           document.getElementById('yearNow').textContent = y;
+           document.getElementById('yearNow2').textContent = y;
+     
+           // ========= 3) OVERLAY NAV =========
+           const overlay = document.getElementById('overlayNav');
+           const menuBtn = document.getElementById('menuBtn');
+           const closeBtn = document.getElementById('closeBtn');
+     
+           function openMenu(){
+             overlay.classList.add('open');
+             overlay.setAttribute('aria-hidden','false');
+             menuBtn.setAttribute('aria-expanded','true');
+             document.body.style.overflow = 'hidden';
+           }
+           function closeMenu(){
+             overlay.classList.remove('open');
+             overlay.setAttribute('aria-hidden','true');
+             menuBtn.setAttribute('aria-expanded','false');
+             document.body.style.overflow = '';
+           }
+     
+           menuBtn.addEventListener('click', openMenu);
+           closeBtn.addEventListener('click', closeMenu);
+     
+           overlay.addEventListener('click', (e)=>{
+             if(e.target === overlay) closeMenu();
+           });
+           document.querySelectorAll('[data-close]').forEach(el=>{
+             el.addEventListener('click', ()=> closeMenu());
+           });
+           document.addEventListener('keydown', (e)=>{
+             if(e.key === 'Escape' && overlay.classList.contains('open')) closeMenu();
+           });
+     
+           // ========= 4) REVEAL =========
+           const items = document.querySelectorAll('.reveal');
+           const io = new IntersectionObserver((entries)=>{
+             entries.forEach(ent=>{
+               if(ent.isIntersecting){
+                 ent.target.classList.add('is-in');
+                 io.unobserve(ent.target);
+               }
+             });
+           }, { threshold: 0.12 });
+           items.forEach(el => io.observe(el));
+         })();
+       </script>
+     </body>
+     </html>
+     

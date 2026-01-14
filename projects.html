@@ -1,0 +1,572 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+
+  <title>Kurva — Our Projects</title>
+  <meta name="description" content="Our Projects Kurva: portfolio rumah dan development modern dengan fokus craft, kualitas, dan value jangka panjang." />
+
+  <!-- Author + Keywords -->
+  <meta name="author" content="Muhammad Affizar Ibrahim Alkautsar" />
+  <meta name="keywords" content="Muhammad Affizar Ibrahim Alkautsar, Kurva, Our Projects, portfolio arsitektur, rumah modern, desain minimalis, konstruksi, interior, development" />
+
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+  <link rel="canonical" href="https://example.com/projects.html" />
+
+  <meta name="theme-color" content="#000000" />
+  <meta name="color-scheme" content="dark light" />
+
+  <!-- Performance hints -->
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+  <link rel="dns-prefetch" href="https://cdn.jsdelivr.net" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+  <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
+  <link rel="preconnect" href="https://images.unsplash.com" crossorigin />
+  <link rel="dns-prefetch" href="https://images.unsplash.com" />
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <!-- Open Graph -->
+  <meta property="og:site_name" content="Kurva" />
+  <meta property="og:title" content="Kurva — Our Projects" />
+  <meta property="og:description" content="Explore our portfolio of thoughtfully designed homes and developments—crafted with care, quality, and long-term value in mind." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://example.com/projects.html" />
+  <meta property="og:image" content="https://images.unsplash.com/photo-1496307653780-42ee777d4833?auto=format&fit=crop&w=1200&q=80" />
+  <meta property="og:locale" content="id_ID" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Kurva — Our Projects" />
+  <meta name="twitter:description" content="Explore our portfolio of thoughtfully designed homes and developments—crafted with care, quality, and long-term value in mind." />
+  <meta name="twitter:image" content="https://images.unsplash.com/photo-1496307653780-42ee777d4833?auto=format&fit=crop&w=1200&q=80" />
+
+  <!-- Favicon pack -->
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="icon" href="/assets/favicons/favicon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="/assets/favicons/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <meta name="apple-mobile-web-app-title" content="Kurva" />
+  <meta name="application-name" content="Kurva" />
+  <meta name="msapplication-TileColor" content="#000000" />
+
+  <!-- Bootstrap -->
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    crossorigin="anonymous"
+  />
+
+  <!-- Icons -->
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    crossorigin="anonymous"
+  />
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"CollectionPage",
+    "name":"Kurva — Our Projects",
+    "url":"https://example.com/projects.html",
+    "inLanguage":"id-ID",
+    "isPartOf":{"@type":"WebSite","name":"Kurva","url":"https://example.com/"},
+    "author":{"@type":"Person","name":"Muhammad Affizar Ibrahim Alkautsar"}
+  }
+  </script>
+
+  <!-- Global theme (dark) — sama gaya dengan index.html -->
+  <style>
+    :root{
+      --bg:#000;
+      --text:rgba(255,255,255,.92);
+      --muted:rgba(255,255,255,.62);
+      --muted2:rgba(255,255,255,.42);
+      --line:rgba(255,255,255,.10);
+      --line2:rgba(255,255,255,.16);
+      --panel:rgba(255,255,255,.05);
+      --panel2:rgba(255,255,255,.07);
+      --shadow:0 18px 50px rgba(0,0,0,.55);
+      --r-xl:22px;
+      --r-lg:18px;
+      --r-md:14px;
+      --ease:cubic-bezier(.2,.8,.2,1);
+      --ease2:cubic-bezier(.16,1,.3,1);
+      --font-ui:"Inter",system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+      --font-display:"Montserrat",system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+    }
+    html{ scroll-behavior:smooth; }
+    body{
+      font-family:var(--font-ui);
+      background:var(--bg);
+      color:var(--text);
+      overflow-x:hidden;
+      margin:0;
+      padding-top:0 !important;
+    }
+    a{ color:inherit; text-decoration:none; }
+    .container{ max-width:1180px; }
+    .soft-line{ border-top:1px solid var(--line); }
+    .glass{
+      background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+      border:1px solid var(--line);
+      border-radius:var(--r-xl);
+      box-shadow:var(--shadow);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+    }
+    .btn-pill{
+      border-radius:999px;
+      padding:.65rem 1rem;
+      border:1px solid var(--line2);
+      background:rgba(255,255,255,.06);
+      color:var(--text);
+      transition: transform .2s var(--ease), background .2s var(--ease), border-color .2s var(--ease);
+    }
+    .btn-pill:hover{ transform: translateY(-1px); background:rgba(255,255,255,.09); border-color:rgba(255,255,255,.22); }
+    .btn-pill:focus{ outline:none; box-shadow:0 0 0 .25rem rgba(255,255,255,.12); }
+
+    .k-brand{
+      display:flex; align-items:center; gap:.6rem;
+      letter-spacing:.2px;
+      font-family:var(--font-display);
+      font-weight:400;
+    }
+    .k-mark{
+      width:18px; height:18px; border-radius:6px;
+      border:1px solid rgba(255,255,255,.24);
+      background: radial-gradient(circle at 30% 30%, rgba(255,255,255,.18), rgba(255,255,255,.02));
+      box-shadow:0 0 0 1px rgba(255,255,255,.06) inset;
+    }
+    .reveal{ opacity:0; transform: translateY(14px); transition: opacity .8s var(--ease2), transform .8s var(--ease2); }
+    .reveal.is-in{ opacity:1; transform:none; }
+    ::selection{ background:rgba(255,255,255,.22); color:#fff; }
+    header{ margin-top:0 !important; }
+
+    /* Projects layout — meniru PDF: heading kiri, grid 3 kolom, card clean */
+    .page-hero{
+      padding-top: 28px !important;
+      padding-bottom: 24px !important;
+    }
+    .page-title{
+      font-family: var(--font-display);
+      font-weight:300;
+      letter-spacing:.2px;
+      font-size: clamp(40px, 4.2vw, 56px);
+      line-height:1.05;
+    }
+    .page-sub{
+      color: var(--muted);
+      max-width: 80ch;
+      font-size: 14px;
+    }
+
+    .project-card{
+      background: transparent;
+      border: 0;
+    }
+    .project-media{
+      border-radius: 18px;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.04);
+      box-shadow: 0 18px 50px rgba(0,0,0,.35);
+    }
+    .project-media img{
+      width:100%;
+      height:100%;
+      display:block;
+      object-fit:cover;
+      transition: transform .35s var(--ease), filter .35s var(--ease);
+      filter: saturate(.98) contrast(1.02);
+    }
+    .project-card:hover .project-media img{
+      transform: scale(1.03);
+      filter: saturate(1.05) contrast(1.05);
+    }
+    .project-name{
+      font-family: var(--font-display);
+      font-weight:300;
+      font-size: 18px;
+      margin: 14px 0 6px;
+    }
+    .project-loc{
+      color: var(--muted2);
+      font-size: 12px;
+      display:flex;
+      align-items:center;
+      gap:.5rem;
+      margin-bottom: 8px;
+    }
+    .project-meta{
+      display:flex;
+      flex-wrap:wrap;
+      gap: 12px;
+      color: rgba(255,255,255,.55);
+      font-size: 12px;
+      align-items:center;
+    }
+    .project-meta .m{
+      display:flex;
+      align-items:center;
+      gap:6px;
+      white-space:nowrap;
+    }
+
+    /* Marquee strip — seperti PDF */
+    .big-strip{
+      margin-top: 34px;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      background: rgba(255,255,255,.02);
+      overflow:hidden;
+    }
+    .big-strip .track{
+      display:flex;
+      white-space:nowrap;
+      padding: 18px 0;
+      animation: strip 18s linear infinite;
+      font-family: var(--font-display);
+      font-weight:300;
+      letter-spacing: 3px;
+      color: rgba(255,255,255,.62);
+      text-transform: uppercase;
+      font-size: clamp(26px, 3vw, 40px);
+    }
+    .big-strip .track span{ padding: 0 20px; }
+    @keyframes strip{
+      from{ transform: translateX(0); }
+      to{ transform: translateX(-50%); }
+    }
+
+    /* Footer style sama index */
+    footer{ padding-bottom: 4rem; }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVBAR (SAMA seperti index.html) -->
+  <header class="position-sticky top-0 z-3" style="background:rgba(0,0,0,.72); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom:1px solid rgba(255,255,255,.08);">
+    <div class="container py-3 d-flex align-items-center justify-content-between">
+      <a href="index.html#home" class="k-brand" aria-label="Go to Home">
+        <span class="k-mark" aria-hidden="true"></span>
+        <span>Kurva</span>
+      </a>
+
+      <div class="d-flex align-items-center gap-2">
+        <a href="index.html#contact" class="btn btn-pill d-none d-md-inline-flex">Contact Us</a>
+        <button id="menuBtn" class="btn btn-pill d-inline-flex align-items-center gap-2" type="button" aria-label="Open menu" aria-controls="overlayNav" aria-expanded="false">
+          <span class="d-none d-sm-inline">Menu</span>
+          <i class="bi bi-list fs-5"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- OVERLAY NAV (SAMA seperti index.html) -->
+  <div id="overlayNav" class="overlay-nav" aria-hidden="true">
+    <div class="container h-100 d-flex flex-column">
+      <div class="d-flex align-items-center justify-content-between py-4">
+        <a href="index.html#home" class="k-brand" data-close aria-label="Go to Home">
+          <span class="k-mark" aria-hidden="true"></span>
+          <span>Kurva</span>
+        </a>
+        <div class="d-flex align-items-center gap-2">
+          <a href="index.html#contact" class="btn btn-pill">Contact Us</a>
+          <button id="closeBtn" class="btn btn-pill" type="button" aria-label="Close menu" data-close>
+            <i class="bi bi-x-lg"></i>
+          </button>
+        </div>
+      </div>
+
+      <div class="flex-grow-1 d-flex align-items-center justify-content-center">
+        <nav class="text-center overlay-links">
+          <a class="overlay-link" href="index.html" data-close>Home</a>
+          <a class="overlay-link" href="projects.html" data-close>Our Projects</a>
+          <a class="overlay-link" href="about.html" data-close>About Us</a>
+          <a class="overlay-link" href="blog.html" data-close>Blog</a>
+        </nav>
+      </div>
+
+      <div class="pb-4 text-center text-white-50 small">
+        <span>© <span id="yearNow"></span> Kurva. Crafted for performance & SEO.</span>
+      </div>
+    </div>
+  </div>
+
+  <style>
+    .overlay-nav{
+      position:fixed; inset:0;
+      background:rgba(0,0,0,.92);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      opacity:0; pointer-events:none;
+      transition: opacity .28s var(--ease);
+      z-index: 9999;
+    }
+    .overlay-nav.open{ opacity:1; pointer-events:auto; }
+    .overlay-links{
+      display:flex; flex-direction:column; gap:34px;
+      font-family: var(--font-display);
+      letter-spacing:.4px;
+    }
+    .overlay-link{
+      font-size: clamp(34px, 5vw, 56px);
+      font-weight:300;
+      color: rgba(255,255,255,.90);
+      transition: transform .22s var(--ease), opacity .22s var(--ease);
+    }
+    .overlay-link:hover{ transform: translateY(-2px); opacity: .95; }
+  </style>
+
+  <!-- MAIN -->
+  <main>
+    <!-- Header page (Our Projects) -->
+    <section class="container page-hero">
+      <div class="soft-line mb-4" style="opacity:.75"></div>
+
+      <div class="row">
+        <div class="col-lg-8 reveal">
+          <h1 class="page-title mb-2">Our Projects</h1>
+          <p class="page-sub mb-0">
+            Explore our portfolio of thoughtfully designed homes and developments across the U.S., each built with care, quality, and long-term value in mind.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Grid (3 kolom x 2 baris seperti PDF) -->
+    <section class="container pb-4">
+      <div class="row g-4">
+
+        <!-- 1 -->
+        <div class="col-md-6 col-lg-4 reveal">
+          <article class="project-card">
+            <a class="project-media ratio ratio-16x9 d-block" href="detail.html?project=urban-nest-compact" aria-label="Urban Nest Compact">
+              <img
+                src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=80"
+                alt="Urban Nest Compact"
+                loading="lazy"
+                decoding="async"
+              />
+            </a>
+            <h2 class="project-name">Urban Nest Compact</h2>
+            <div class="project-loc"><i class="bi bi-geo-alt"></i><span>Austin, Texas</span></div>
+            <div class="project-meta">
+              <span class="m"><i class="bi bi-aspect-ratio"></i> 1,023 sqft</span>
+              <span class="m"><i class="bi bi-door-open"></i> 2 Bedrooms</span>
+              <span class="m"><i class="bi bi-droplet"></i> 1 Bathroom</span>
+            </div>
+          </article>
+        </div>
+
+        <!-- 2 -->
+        <div class="col-md-6 col-lg-4 reveal">
+          <article class="project-card">
+            <a class="project-media ratio ratio-16x9 d-block" href="detail.html?project=casa-courtyard-luxe" aria-label="Casa Courtyard Luxe">
+              <img
+                src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&w=1600&q=80"
+                alt="Casa Courtyard Luxe"
+                loading="lazy"
+                decoding="async"
+              />
+            </a>
+            <h2 class="project-name">Casa Courtyard Luxe</h2>
+            <div class="project-loc"><i class="bi bi-geo-alt"></i><span>Sedona, Arizona</span></div>
+            <div class="project-meta">
+              <span class="m"><i class="bi bi-aspect-ratio"></i> 1,507 sqft</span>
+              <span class="m"><i class="bi bi-door-open"></i> 3 Bedrooms</span>
+              <span class="m"><i class="bi bi-droplet"></i> 2 Bathroom</span>
+            </div>
+          </article>
+        </div>
+
+        <!-- 3 -->
+        <div class="col-md-6 col-lg-4 reveal">
+          <article class="project-card">
+            <a class="project-media ratio ratio-16x9 d-block" href="detail.html?project=horizon-cliff-cabin" aria-label="Horizon Cliff Cabin">
+              <img
+                src="https://images.unsplash.com/photo-1502005229762-cf1b2da7c5d6?auto=format&fit=crop&w=1600&q=80"
+                alt="Horizon Cliff Cabin"
+                loading="lazy"
+                decoding="async"
+              />
+            </a>
+            <h2 class="project-name">Horizon Cliff Cabin</h2>
+            <div class="project-loc"><i class="bi bi-geo-alt"></i><span>Asheville, North Carolina</span></div>
+            <div class="project-meta">
+              <span class="m"><i class="bi bi-aspect-ratio"></i> 1,184 sqft</span>
+              <span class="m"><i class="bi bi-door-open"></i> 2 Bedrooms</span>
+              <span class="m"><i class="bi bi-droplet"></i> 2 Bathroom</span>
+            </div>
+          </article>
+        </div>
+
+        <!-- 4 -->
+        <div class="col-md-6 col-lg-4 reveal">
+          <article class="project-card">
+            <a class="project-media ratio ratio-16x9 d-block" href="detail.html?project=nordic-a-frame-lodge" aria-label="Nordic A-Frame Lodge">
+              <img
+                src="https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=1600&q=80"
+                alt="Nordic A-Frame Lodge"
+                loading="lazy"
+                decoding="async"
+              />
+            </a>
+            <h2 class="project-name">Nordic A-Frame Lodge</h2>
+            <div class="project-loc"><i class="bi bi-geo-alt"></i><span>Lake Tahoe, Nevada</span></div>
+            <div class="project-meta">
+              <span class="m"><i class="bi bi-aspect-ratio"></i> 969 sqft</span>
+              <span class="m"><i class="bi bi-door-open"></i> 2 Bedrooms</span>
+              <span class="m"><i class="bi bi-droplet"></i> 1 Bathroom</span>
+            </div>
+          </article>
+        </div>
+
+        <!-- 5 -->
+        <div class="col-md-6 col-lg-4 reveal">
+          <article class="project-card">
+            <a class="project-media ratio ratio-16x9 d-block" href="detail.html?project=elevate-split-retreat" aria-label="Elevate Split Retreat">
+              <img
+                src="https://images.unsplash.com/photo-1484154218962-a197022b5858?auto=format&fit=crop&w=1600&q=80"
+                alt="Elevate Split Retreat"
+                loading="lazy"
+                decoding="async"
+              />
+            </a>
+            <h2 class="project-name">Elevate Split Retreat</h2>
+            <div class="project-loc"><i class="bi bi-geo-alt"></i><span>Boulder, Colorado</span></div>
+            <div class="project-meta">
+              <span class="m"><i class="bi bi-aspect-ratio"></i> 1,345 sqft</span>
+              <span class="m"><i class="bi bi-door-open"></i> 3 Bedrooms</span>
+              <span class="m"><i class="bi bi-droplet"></i> 2 Bathroom</span>
+            </div>
+          </article>
+        </div>
+
+        <!-- 6 -->
+        <div class="col-md-6 col-lg-4 reveal">
+          <article class="project-card">
+            <a class="project-media ratio ratio-16x9 d-block" href="detail.html?project=serenity-box-villa" aria-label="Serenity Box Villa">
+              <img
+                src="https://images.unsplash.com/photo-1449247709967-d4461a6a6103?auto=format&fit=crop&w=1600&q=80"
+                alt="Serenity Box Villa"
+                loading="lazy"
+                decoding="async"
+              />
+            </a>
+            <h2 class="project-name">Serenity Box Villa</h2>
+            <div class="project-loc"><i class="bi bi-geo-alt"></i><span>Palm Springs, California</span></div>
+            <div class="project-meta">
+              <span class="m"><i class="bi bi-aspect-ratio"></i> 861 sqft</span>
+              <span class="m"><i class="bi bi-door-open"></i> 2 Bedrooms</span>
+              <span class="m"><i class="bi bi-droplet"></i> 1 Bathroom</span>
+            </div>
+          </article>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Big Marquee Strip (seperti PDF) -->
+    <section class="big-strip">
+      <div class="track" aria-hidden="true">
+        <span>ARCHITECTURE • LIVING • SIMPLICITY • ARCHITECTURE •</span>
+        <span>ARCHITECTURE • LIVING • SIMPLICITY • ARCHITECTURE •</span>
+        <span>ARCHITECTURE • LIVING • SIMPLICITY • ARCHITECTURE •</span>
+        <span>ARCHITECTURE • LIVING • SIMPLICITY • ARCHITECTURE •</span>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER (SAMA seperti index.html) -->
+  <footer class="container py-5">
+    <div class="soft-line mb-4"></div>
+    <div class="row g-4">
+      <div class="col-lg-6">
+        <div class="k-brand mb-2">
+          <span class="k-mark" aria-hidden="true"></span>
+          <span>Kurva</span>
+        </div>
+        <p class="mb-0" style="color:var(--muted); max-width:60ch;">
+          Modern spaces—calm, functional, and crafted. Built on Bootstrap, optimized for SEO, AI Overview, and PageSpeed.
+        </p>
+      </div>
+      <div class="col-lg-6">
+        <div class="d-flex flex-wrap gap-2 justify-content-lg-end">
+          <a class="btn btn-pill" href="index.html#home">Top</a>
+          <a class="btn btn-pill" href="projects.html">Projects</a>
+          <a class="btn btn-pill" href="index.html#about">About</a>
+          <a class="btn btn-pill" href="index.html#contact">Contact</a>
+        </div>
+      </div>
+      <div class="col-12 small text-white-50">
+        © <span id="yearNow2"></span> Kurva • Author: Muhammad Affizar Ibrahim Alkautsar
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS (defer) -->
+  <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+
+  <!-- Interaction JS (defer) — sama pola index -->
+  <script defer>
+    (function(){
+      const y = new Date().getFullYear();
+      document.getElementById('yearNow').textContent = y;
+      document.getElementById('yearNow2').textContent = y;
+
+      const overlay = document.getElementById('overlayNav');
+      const menuBtn = document.getElementById('menuBtn');
+      const closeBtn = document.getElementById('closeBtn');
+
+      function openMenu(){
+        overlay.classList.add('open');
+        overlay.setAttribute('aria-hidden','false');
+        menuBtn.setAttribute('aria-expanded','true');
+        document.body.style.overflow = 'hidden';
+      }
+      function closeMenu(){
+        overlay.classList.remove('open');
+        overlay.setAttribute('aria-hidden','true');
+        menuBtn.setAttribute('aria-expanded','false');
+        document.body.style.overflow = '';
+      }
+
+      menuBtn.addEventListener('click', openMenu);
+      closeBtn.addEventListener('click', closeMenu);
+
+      overlay.addEventListener('click', (e)=>{
+        if(e.target === overlay) closeMenu();
+      });
+
+      document.querySelectorAll('[data-close]').forEach(el=>{
+        el.addEventListener('click', ()=> closeMenu());
+      });
+
+      document.addEventListener('keydown', (e)=>{
+        if(e.key === 'Escape' && overlay.classList.contains('open')) closeMenu();
+      });
+
+      const items = document.querySelectorAll('.reveal');
+      const io = new IntersectionObserver((entries)=>{
+        entries.forEach(ent=>{
+          if(ent.isIntersecting){
+            ent.target.classList.add('is-in');
+            io.unobserve(ent.target);
+          }
+        });
+      }, { threshold: 0.12 });
+      items.forEach(el => io.observe(el));
+    })();
+  </script>
+
+</body>
+</html>
