@@ -849,7 +849,7 @@
       // =========================
       // 1) DATA: semua artikel cukup ditambah di sini
       // =========================
-      const SITE_URL = "https://example.com";
+      const SITE_URL = (window.location && window.location.origin) ? window.location.origin : "https://example.com";
       const WA_NUMBER = "6281234567890"; // TODO: ganti nomor WA kamu (tanpa +)
       const WA_DEFAULT_MESSAGE = "Halo Kurva, saya ingin konsultasi terkait artikel dan kebutuhan proyek saya.";
 
@@ -1361,140 +1361,158 @@
       setMeta("twitter:image", post.hero.imgOg);
 
       ensureCanonical(canonicalUrl);
+      // ... KODE KAMU YANG SUDAH ADA TETAP ...
 
-      (function () {
-        // ... KODE KAMU YANG SUDAH ADA TETAP ...
+      // =========================
+      // 5) SEO META (FIXED, SINGLE SOURCE OF TRUTH)
+      // =========================
+      document.title = "Kurva — " + post.title;
 
-        // =========================
-        // 5) SEO META
-        // =========================
-        document.title = "Kurva — " + post.title;
+      // domain real
+      const ORIGIN = (window.location && window.location.origin) ? window.location.origin : SITE_URL;
 
-        const desc = safeText(post.description);
-        setMeta("description", desc);
-        setOG("og:title", post.title);
-        setOG("og:description", desc);
-        setOG("og:type", "article");
-        setOG("og:url", canonicalUrl);
-        setOG("og:image", post.hero.imgOg);
+      // canonical real (bukan example.com)
+      const canonicalFixed = notFound
+        ? (ORIGIN + "/post.html")
+        : (ORIGIN + "/post.html?post=" + encodeURIComponent(slug));
 
-        setMeta("twitter:title", post.title);
-        setMeta("twitter:description", desc);
-        setMeta("twitter:image", post.hero.imgOg);
+      // description wajib ada
+      const descFixed =
+        safeText(post.description) ||
+        safeText(post.lead) ||
+        "Kurva Journal: insight, ide, dan update seputar properti, desain, arsitektur modern, serta pengembangan ruang.";
 
-        ensureCanonical(canonicalUrl);
+      // og image fallback
+      const ogImgFixed = (post.hero && (post.hero.imgOg || post.hero.img))
+        ? (post.hero.imgOg || post.hero.img)
+        : "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=1200&q=80";
 
-        // JSON-LD Article
-        const ldArticle = {
-          "@context": "https://schema.org",
-          "@type": "Article",
-          "headline": post.title,
-          "description": desc,
-          "image": [post.hero.imgOg],
-          "author": { "@type": "Person", "name": "Muhammad Affizar Ibrahim Alkautsar" },
-          "publisher": { "@type": "Organization", "name": "Kurva", "url": SITE_URL + "/" },
-          "datePublished": post.datePublished,
-          "dateModified": post.dateModified,
-          "mainEntityOfPage": { "@type": "WebPage", "@id": canonicalUrl },
-          "inLanguage": "id-ID"
-        };
-        document.getElementById("ldArticle").textContent = JSON.stringify(ldArticle);
+      // apply meta sekali
+      setMeta("description", descFixed);
 
-        // =========================
-        // ✅ TAMBAHAN SEO FIX (JANGAN HAPUS KODE DI ATAS)
-        // Tujuan:
-        // - meta description tidak boleh kosong
-        // - canonical/og:url/JSON-LD pakai domain real (bukan example.com)
-        // =========================
-        (function seoFix() {
-          // 1) Pastikan description selalu ada (audit Lighthouse sering gagal kalau empty)
-          const descFixed =
-            safeText(post.description) ||
-            safeText(post.lead) ||
-            "Kurva Journal: insight, ide, dan update seputar properti, desain, arsitektur modern, serta pengembangan ruang.";
+      setOG("og:title", post.title);
+      setOG("og:description", descFixed);
+      setOG("og:type", "article");
+      setOG("og:url", canonicalFixed);
+      setOG("og:image", ogImgFixed);
 
-          // 2) Gunakan domain saat ini (lebih benar untuk production)
-          const ORIGIN = (window.location && window.location.origin) ? window.location.origin : SITE_URL;
+      setMeta("twitter:title", post.title);
+      setMeta("twitter:description", descFixed);
+      setMeta("twitter:image", ogImgFixed);
 
-          // 3) Canonical yang benar berdasarkan domain real
-          const canonicalFixed = notFound
-            ? (ORIGIN + "/post.html")
-            : (ORIGIN + "/post.html?post=" + encodeURIComponent(slug));
+      ensureCanonical(canonicalFixed);
 
-          // 4) Terapkan ulang meta penting (override yang kosong/tidak cocok)
-          setMeta("description", descFixed);
-          setOG("og:description", descFixed);
-          setMeta("twitter:description", descFixed);
-
-          setOG("og:url", canonicalFixed);
-          ensureCanonical(canonicalFixed);
-
-          // image fallback kalau imgOg kosong
-          const ogImgFixed = (post.hero && (post.hero.imgOg || post.hero.img)) ? (post.hero.imgOg || post.hero.img) : "";
-          if (ogImgFixed) {
-            setOG("og:image", ogImgFixed);
-            setMeta("twitter:image", ogImgFixed);
-          }
-
-          // 5) Perbaiki JSON-LD Article agar konsisten dgn canonical real + descFixed
-          // (hanya update script tag-nya, tidak mengubah struktur lain)
-          try {
-            const ldFixed = {
-              ...ldArticle,
-              description: descFixed,
-              image: ogImgFixed ? [ogImgFixed] : ldArticle.image,
-              publisher: { "@type": "Organization", "name": "Kurva", "url": ORIGIN + "/" },
-              mainEntityOfPage: { "@type": "WebPage", "@id": canonicalFixed }
-            };
-            document.getElementById("ldArticle").textContent = JSON.stringify(ldFixed);
-          } catch (e) {
-            // no-op
-          }
-        })();
-        // =========================
-        // ✅ END TAMBAHAN SEO FIX
-        // =========================
-
-        // ... LANJUTAN KODE KAMU TETAP ...
-      })();
-
-
-      // JSON-LD Article
+      // JSON-LD Article (SINGLE, CONSISTENT)
       const ldArticle = {
         "@context": "https://schema.org",
         "@type": "Article",
         "headline": post.title,
-        "description": desc,
-        "image": [post.hero.imgOg],
+        "description": descFixed,
+        "image": [ogImgFixed],
         "author": { "@type": "Person", "name": "Muhammad Affizar Ibrahim Alkautsar" },
-        "publisher": { "@type": "Organization", "name": "Kurva", "url": SITE_URL + "/" },
+        "publisher": { "@type": "Organization", "name": "Kurva", "url": ORIGIN + "/" },
         "datePublished": post.datePublished,
         "dateModified": post.dateModified,
-        "mainEntityOfPage": { "@type": "WebPage", "@id": canonicalUrl },
+        "mainEntityOfPage": { "@type": "WebPage", "@id": canonicalFixed },
         "inLanguage": "id-ID"
       };
       document.getElementById("ldArticle").textContent = JSON.stringify(ldArticle);
 
-      // JSON-LD FAQ
-      const faqList = Array.isArray(post.faq) ? post.faq : [];
-      document.getElementById("ldFaq").textContent = JSON.stringify({
-        "@context": "https://schema.org",
-        "@type": "FAQPage",
-        "mainEntity": faqList.map(x => ({
-          "@type": "Question",
-          "name": x.q,
-          "acceptedAnswer": { "@type": "Answer", "text": x.a }
-        }))
-      });
+      // =========================
+      // ✅ TAMBAHAN SEO FIX (JANGAN HAPUS KODE DI ATAS)
+      // Tujuan:
+      // - meta description tidak boleh kosong
+      // - canonical/og:url/JSON-LD pakai domain real (bukan example.com)
+      // =========================
+      (function seoFix() {
+        // 1) Pastikan description selalu ada (audit Lighthouse sering gagal kalau empty)
+        const descFixed =
+          safeText(post.description) ||
+          safeText(post.lead) ||
+          "Kurva Journal: insight, ide, dan update seputar properti, desain, arsitektur modern, serta pengembangan ruang.";
 
-      // Render FAQ accordion
-      const faqWrap = document.getElementById("faqWrap");
-      const faqAcc = document.getElementById("faqAcc");
-      if (faqList.length) {
-        faqWrap.style.display = "";
-        faqAcc.innerHTML = faqList.map((item, idx) => {
-          const id = "fq" + (idx + 1);
-          return `
+        // 2) Gunakan domain saat ini (lebih benar untuk production)
+        const ORIGIN = (window.location && window.location.origin) ? window.location.origin : SITE_URL;
+
+        // 3) Canonical yang benar berdasarkan domain real
+        const canonicalFixed = notFound
+          ? (ORIGIN + "/post.html")
+          : (ORIGIN + "/post.html?post=" + encodeURIComponent(slug));
+
+        // 4) Terapkan ulang meta penting (override yang kosong/tidak cocok)
+        setMeta("description", descFixed);
+        setOG("og:description", descFixed);
+        setMeta("twitter:description", descFixed);
+
+        setOG("og:url", canonicalFixed);
+        ensureCanonical(canonicalFixed);
+
+        // image fallback kalau imgOg kosong
+        const ogImgFixed = (post.hero && (post.hero.imgOg || post.hero.img)) ? (post.hero.imgOg || post.hero.img) : "";
+        if (ogImgFixed) {
+          setOG("og:image", ogImgFixed);
+          setMeta("twitter:image", ogImgFixed);
+        }
+
+        // 5) Perbaiki JSON-LD Article agar konsisten dgn canonical real + descFixed
+        // (hanya update script tag-nya, tidak mengubah struktur lain)
+        try {
+          const ldFixed = {
+            ...ldArticle,
+            description: descFixed,
+            image: ogImgFixed ? [ogImgFixed] : ldArticle.image,
+            publisher: { "@type": "Organization", "name": "Kurva", "url": ORIGIN + "/" },
+            mainEntityOfPage: { "@type": "WebPage", "@id": canonicalFixed }
+          };
+          document.getElementById("ldArticle").textContent = JSON.stringify(ldFixed);
+        } catch (e) {
+          // no-op
+        }
+      })();
+      // =========================
+      // ✅ END TAMBAHAN SEO FIX
+      // =========================
+
+      // ... LANJUTAN KODE KAMU TETAP ...
+    })();
+
+
+    // JSON-LD Article
+    const ldArticle = {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": post.title,
+      "description": desc,
+      "image": [post.hero.imgOg],
+      "author": { "@type": "Person", "name": "Muhammad Affizar Ibrahim Alkautsar" },
+      "publisher": { "@type": "Organization", "name": "Kurva", "url": SITE_URL + "/" },
+      "datePublished": post.datePublished,
+      "dateModified": post.dateModified,
+      "mainEntityOfPage": { "@type": "WebPage", "@id": canonicalUrl },
+      "inLanguage": "id-ID"
+    };
+    document.getElementById("ldArticle").textContent = JSON.stringify(ldArticle);
+
+    // JSON-LD FAQ
+    const faqList = Array.isArray(post.faq) ? post.faq : [];
+    document.getElementById("ldFaq").textContent = JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": faqList.map(x => ({
+        "@type": "Question",
+        "name": x.q,
+        "acceptedAnswer": { "@type": "Answer", "text": x.a }
+      }))
+    });
+
+    // Render FAQ accordion
+    const faqWrap = document.getElementById("faqWrap");
+    const faqAcc = document.getElementById("faqAcc");
+    if (faqList.length) {
+      faqWrap.style.display = "";
+      faqAcc.innerHTML = faqList.map((item, idx) => {
+        const id = "fq" + (idx + 1);
+        return `
                  <div class="accordion-item">
                    <h3 class="accordion-header">
                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#${id}">
@@ -1506,17 +1524,17 @@
                    </div>
                  </div>
                `;
-        }).join("");
-      } else {
-        faqWrap.style.display = "none";
-      }
+      }).join("");
+    } else {
+      faqWrap.style.display = "none";
+    }
 
-      // =========================
-      // 6) READ ALSO + RELATED
-      // =========================
-      const readAlso = document.getElementById("readAlso");
-      const ra = Array.isArray(post.readAlso) ? post.readAlso : [];
-      readAlso.innerHTML = ra.slice(0, 2).map(item => `
+    // =========================
+    // 6) READ ALSO + RELATED
+    // =========================
+    const readAlso = document.getElementById("readAlso");
+    const ra = Array.isArray(post.readAlso) ? post.readAlso : [];
+    readAlso.innerHTML = ra.slice(0, 2).map(item => `
              <div class="col-12">
                <a class="mini-card d-block" href="post.html?post=${encodeURIComponent(item.slug)}">
                  <div class="mini-img">
@@ -1531,9 +1549,9 @@
              </div>
            `).join("");
 
-      const relatedWrap = document.getElementById("relatedPosts");
-      const rel = Array.isArray(post.related) ? post.related : [];
-      relatedWrap.innerHTML = rel.slice(0, 3).map(item => `
+    const relatedWrap = document.getElementById("relatedPosts");
+    const rel = Array.isArray(post.related) ? post.related : [];
+    relatedWrap.innerHTML = rel.slice(0, 3).map(item => `
              <div class="col-12 reveal">
                <div class="mini-card">
                  <div class="mini-img">
@@ -1548,22 +1566,22 @@
              </div>
            `).join("");
 
-      /* =========================
-         TAMBAHAN: render fallback jika kosong
-         ========================= */
-      // 6A) Fallback untuk "Baca Juga" (target 2 kartu)
-      if (!ra.length || !readAlso.innerHTML.trim()) {
-        const fb = pickFallbackPosts(slug, 2, post.tag).map(p => {
-          const n = normalizeCardData(p);
-          return {
-            slug: p.slug,
-            title: p.title,
-            desc: n.desc,
-            img: n.img
-          };
-        });
+    /* =========================
+       TAMBAHAN: render fallback jika kosong
+       ========================= */
+    // 6A) Fallback untuk "Baca Juga" (target 2 kartu)
+    if (!ra.length || !readAlso.innerHTML.trim()) {
+      const fb = pickFallbackPosts(slug, 2, post.tag).map(p => {
+        const n = normalizeCardData(p);
+        return {
+          slug: p.slug,
+          title: p.title,
+          desc: n.desc,
+          img: n.img
+        };
+      });
 
-        readAlso.innerHTML = fb.slice(0, 2).map(item => `
+      readAlso.innerHTML = fb.slice(0, 2).map(item => `
                <div class="col-12">
                  <a class="mini-card d-block" href="post.html?post=${encodeURIComponent(item.slug)}">
                    <div class="mini-img">
@@ -1577,21 +1595,21 @@
                  </a>
                </div>
              `).join("");
-      }
+    }
 
-      // 6B) Fallback untuk "Artikel Terkait" (target 3 kartu)
-      if (!rel.length || !relatedWrap.innerHTML.trim()) {
-        const fb2 = pickFallbackPosts(slug, 3, post.tag).map(p => {
-          const n = normalizeCardData(p);
-          return {
-            slug: p.slug,
-            title: p.title,
-            desc: n.desc,
-            img: n.img
-          };
-        });
+    // 6B) Fallback untuk "Artikel Terkait" (target 3 kartu)
+    if (!rel.length || !relatedWrap.innerHTML.trim()) {
+      const fb2 = pickFallbackPosts(slug, 3, post.tag).map(p => {
+        const n = normalizeCardData(p);
+        return {
+          slug: p.slug,
+          title: p.title,
+          desc: n.desc,
+          img: n.img
+        };
+      });
 
-        relatedWrap.innerHTML = fb2.slice(0, 3).map(item => `
+      relatedWrap.innerHTML = fb2.slice(0, 3).map(item => `
                <div class="col-12 reveal">
                  <div class="mini-card">
                    <div class="mini-img">
@@ -1605,195 +1623,195 @@
                  </div>
                </div>
              `).join("");
+    }
+    /* =========================
+       END TAMBAHAN
+       ========================= */
+
+    // =========================
+    // 7) TOC
+    // =========================
+    const tocList = document.getElementById('tocList');
+    const headings = article.querySelectorAll('h2, h3');
+    const used = new Map();
+    tocList.innerHTML = "";
+
+    headings.forEach(h => {
+      const level = h.tagName.toLowerCase();
+      const base = slugify(h.textContent);
+      let id = base || 'section';
+
+      if (used.has(id)) {
+        used.set(id, used.get(id) + 1);
+        id = id + '-' + used.get(id);
+      } else {
+        used.set(id, 1);
       }
-      /* =========================
-         END TAMBAHAN
-         ========================= */
+      h.id = h.id || id;
 
-      // =========================
-      // 7) TOC
-      // =========================
-      const tocList = document.getElementById('tocList');
-      const headings = article.querySelectorAll('h2, h3');
-      const used = new Map();
-      tocList.innerHTML = "";
+      const li = document.createElement('li');
+      const a = document.createElement('a');
+      a.href = '#' + h.id;
+      a.textContent = h.textContent;
+      if (level === 'h3') li.className = 'toc-indent';
 
-      headings.forEach(h => {
-        const level = h.tagName.toLowerCase();
-        const base = slugify(h.textContent);
-        let id = base || 'section';
+      li.appendChild(a);
+      tocList.appendChild(li);
+    });
 
-        if (used.has(id)) {
-          used.set(id, used.get(id) + 1);
-          id = id + '-' + used.get(id);
-        } else {
-          used.set(id, 1);
-        }
-        h.id = h.id || id;
+    const tocCard = document.getElementById('tocCard');
+    const tocToggle = document.getElementById('tocToggle');
+    const tocChevron = document.getElementById('tocChevron');
 
-        const li = document.createElement('li');
-        const a = document.createElement('a');
-        a.href = '#' + h.id;
-        a.textContent = h.textContent;
-        if (level === 'h3') li.className = 'toc-indent';
+    function setToc(open) {
+      tocCard.classList.toggle('open', open);
+      tocToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      tocChevron.className = open ? 'bi bi-chevron-up' : 'bi bi-chevron-down';
+    }
+    setToc(true);
 
-        li.appendChild(a);
-        tocList.appendChild(li);
-      });
-
-      const tocCard = document.getElementById('tocCard');
-      const tocToggle = document.getElementById('tocToggle');
-      const tocChevron = document.getElementById('tocChevron');
-
-      function setToc(open) {
-        tocCard.classList.toggle('open', open);
-        tocToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
-        tocChevron.className = open ? 'bi bi-chevron-up' : 'bi bi-chevron-down';
+    tocToggle.addEventListener('click', () => setToc(!tocCard.classList.contains('open')));
+    tocToggle.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        setToc(!tocCard.classList.contains('open'));
       }
-      setToc(true);
+    });
 
-      tocToggle.addEventListener('click', () => setToc(!tocCard.classList.contains('open')));
-      tocToggle.addEventListener('keydown', (e) => {
-        if (e.key === 'Enter' || e.key === ' ') {
-          e.preventDefault();
-          setToc(!tocCard.classList.contains('open'));
+    // Smooth scroll offset untuk TOC + anchor lain
+    const headerOffset = 88;
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', (e) => {
+        const id = a.getAttribute('href');
+        if (!id || id === '#') return;
+        const target = document.querySelector(id);
+        if (!target) return;
+
+        e.preventDefault();
+        const top = target.getBoundingClientRect().top + window.pageYOffset - headerOffset;
+        window.scrollTo({ top, behavior: 'smooth' });
+        history.pushState(null, '', id);
+      });
+    });
+
+    // =========================
+    // 8) SHARE BUTTONS
+    // =========================
+    const shareUrl = encodeURIComponent(window.location.href);
+    const shareTitle = encodeURIComponent(document.title);
+
+    document.getElementById('shareWA').addEventListener('click', () => {
+      window.open(`https://wa.me/?text=${shareTitle}%20-%20${shareUrl}`, '_blank', 'noopener,noreferrer');
+    });
+    document.getElementById('shareFB').addEventListener('click', () => {
+      window.open(`https://www.facebook.com/sharer/sharer.php?u=${shareUrl}`, '_blank', 'noopener,noreferrer');
+    });
+    document.getElementById('shareX').addEventListener('click', () => {
+      window.open(`https://twitter.com/intent/tweet?text=${shareTitle}&url=${shareUrl}`, '_blank', 'noopener,noreferrer');
+    });
+    document.getElementById('shareIN').addEventListener('click', () => {
+      window.open(`https://www.linkedin.com/sharing/share-offsite/?url=${shareUrl}`, '_blank', 'noopener,noreferrer');
+    });
+
+    const note = document.getElementById('copyNote');
+    document.getElementById('copyLink').addEventListener('click', async () => {
+      try {
+        await navigator.clipboard.writeText(window.location.href);
+        note.textContent = 'Link berhasil disalin.';
+        setTimeout(() => note.textContent = '', 2000);
+      } catch (err) {
+        note.textContent = 'Gagal menyalin. Silakan copy manual dari address bar.';
+        setTimeout(() => note.textContent = '', 2500);
+      }
+    });
+
+    /* =========================
+       TAMBAHAN: pindahkan share buttons ke bawah artikel saat mobile
+       (tanpa duplikasi, jadi ID aman)
+       ========================= */
+    const shareWrapEl = document.querySelector('.share-wrap');
+    const shareDockMobile = document.getElementById('shareDockMobile');
+    const shareDockSlot = document.getElementById('shareDockSlot');
+
+    const shareOriginParent = shareWrapEl ? shareWrapEl.parentElement : null;
+    const shareOriginNext = shareWrapEl ? shareWrapEl.nextElementSibling : null;
+
+    function placeShareByViewport() {
+      if (!shareWrapEl || !shareDockMobile || !shareDockSlot || !shareOriginParent) return;
+
+      const isMobile = window.matchMedia('(max-width: 991.98px)').matches;
+
+      if (isMobile) {
+        shareDockMobile.style.display = "";
+        if (shareWrapEl.parentElement !== shareDockSlot) {
+          shareDockSlot.appendChild(shareWrapEl);
         }
-      });
-
-      // Smooth scroll offset untuk TOC + anchor lain
-      const headerOffset = 88;
-      document.querySelectorAll('a[href^="#"]').forEach(a => {
-        a.addEventListener('click', (e) => {
-          const id = a.getAttribute('href');
-          if (!id || id === '#') return;
-          const target = document.querySelector(id);
-          if (!target) return;
-
-          e.preventDefault();
-          const top = target.getBoundingClientRect().top + window.pageYOffset - headerOffset;
-          window.scrollTo({ top, behavior: 'smooth' });
-          history.pushState(null, '', id);
-        });
-      });
-
-      // =========================
-      // 8) SHARE BUTTONS
-      // =========================
-      const shareUrl = encodeURIComponent(window.location.href);
-      const shareTitle = encodeURIComponent(document.title);
-
-      document.getElementById('shareWA').addEventListener('click', () => {
-        window.open(`https://wa.me/?text=${shareTitle}%20-%20${shareUrl}`, '_blank', 'noopener,noreferrer');
-      });
-      document.getElementById('shareFB').addEventListener('click', () => {
-        window.open(`https://www.facebook.com/sharer/sharer.php?u=${shareUrl}`, '_blank', 'noopener,noreferrer');
-      });
-      document.getElementById('shareX').addEventListener('click', () => {
-        window.open(`https://twitter.com/intent/tweet?text=${shareTitle}&url=${shareUrl}`, '_blank', 'noopener,noreferrer');
-      });
-      document.getElementById('shareIN').addEventListener('click', () => {
-        window.open(`https://www.linkedin.com/sharing/share-offsite/?url=${shareUrl}`, '_blank', 'noopener,noreferrer');
-      });
-
-      const note = document.getElementById('copyNote');
-      document.getElementById('copyLink').addEventListener('click', async () => {
-        try {
-          await navigator.clipboard.writeText(window.location.href);
-          note.textContent = 'Link berhasil disalin.';
-          setTimeout(() => note.textContent = '', 2000);
-        } catch (err) {
-          note.textContent = 'Gagal menyalin. Silakan copy manual dari address bar.';
-          setTimeout(() => note.textContent = '', 2500);
-        }
-      });
-
-      /* =========================
-         TAMBAHAN: pindahkan share buttons ke bawah artikel saat mobile
-         (tanpa duplikasi, jadi ID aman)
-         ========================= */
-      const shareWrapEl = document.querySelector('.share-wrap');
-      const shareDockMobile = document.getElementById('shareDockMobile');
-      const shareDockSlot = document.getElementById('shareDockSlot');
-
-      const shareOriginParent = shareWrapEl ? shareWrapEl.parentElement : null;
-      const shareOriginNext = shareWrapEl ? shareWrapEl.nextElementSibling : null;
-
-      function placeShareByViewport() {
-        if (!shareWrapEl || !shareDockMobile || !shareDockSlot || !shareOriginParent) return;
-
-        const isMobile = window.matchMedia('(max-width: 991.98px)').matches;
-
-        if (isMobile) {
-          shareDockMobile.style.display = "";
-          if (shareWrapEl.parentElement !== shareDockSlot) {
-            shareDockSlot.appendChild(shareWrapEl);
+      } else {
+        shareDockMobile.style.display = "none";
+        if (shareWrapEl.parentElement !== shareOriginParent) {
+          if (shareOriginNext) {
+            shareOriginParent.insertBefore(shareWrapEl, shareOriginNext);
+          } else {
+            shareOriginParent.appendChild(shareWrapEl);
           }
-        } else {
-          shareDockMobile.style.display = "none";
-          if (shareWrapEl.parentElement !== shareOriginParent) {
-            if (shareOriginNext) {
-              shareOriginParent.insertBefore(shareWrapEl, shareOriginNext);
-            } else {
-              shareOriginParent.appendChild(shareWrapEl);
-            }
-          }
         }
       }
+    }
 
-      placeShareByViewport();
-      window.addEventListener('resize', placeShareByViewport, { passive: true });
-      window.addEventListener('orientationchange', placeShareByViewport, { passive: true });
-      /* =========================
-         END TAMBAHAN
-         ========================= */
+    placeShareByViewport();
+    window.addEventListener('resize', placeShareByViewport, { passive: true });
+    window.addEventListener('orientationchange', placeShareByViewport, { passive: true });
+    /* =========================
+       END TAMBAHAN
+       ========================= */
 
-      // =========================
-      // 9) CTA WhatsApp
-      // =========================
-      const waText = encodeURIComponent(WA_DEFAULT_MESSAGE + " (Artikel: " + post.title + ")");
-      document.getElementById("ctaWA").href = `https://wa.me/${WA_NUMBER}?text=${waText}`;
+    // =========================
+    // 9) CTA WhatsApp
+    // =========================
+    const waText = encodeURIComponent(WA_DEFAULT_MESSAGE + " (Artikel: " + post.title + ")");
+    document.getElementById("ctaWA").href = `https://wa.me/${WA_NUMBER}?text=${waText}`;
 
-      // =========================
-      // 10) OVERLAY NAV + YEAR + REVEAL
-      // =========================
-      const y = new Date().getFullYear();
-      document.getElementById('yearNow').textContent = y;
-      document.getElementById('yearNow2').textContent = y;
+    // =========================
+    // 10) OVERLAY NAV + YEAR + REVEAL
+    // =========================
+    const y = new Date().getFullYear();
+    document.getElementById('yearNow').textContent = y;
+    document.getElementById('yearNow2').textContent = y;
 
-      const overlay = document.getElementById('overlayNav');
-      const menuBtn = document.getElementById('menuBtn');
-      const closeBtn = document.getElementById('closeBtn');
+    const overlay = document.getElementById('overlayNav');
+    const menuBtn = document.getElementById('menuBtn');
+    const closeBtn = document.getElementById('closeBtn');
 
-      function openMenu() {
-        overlay.classList.add('open');
-        overlay.setAttribute('aria-hidden', 'false');
-        menuBtn.setAttribute('aria-expanded', 'true');
-        document.body.style.overflow = 'hidden';
-      }
-      function closeMenu() {
-        overlay.classList.remove('open');
-        overlay.setAttribute('aria-hidden', 'true');
-        menuBtn.setAttribute('aria-expanded', 'false');
-        document.body.style.overflow = '';
-      }
+    function openMenu() {
+      overlay.classList.add('open');
+      overlay.setAttribute('aria-hidden', 'false');
+      menuBtn.setAttribute('aria-expanded', 'true');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeMenu() {
+      overlay.classList.remove('open');
+      overlay.setAttribute('aria-hidden', 'true');
+      menuBtn.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
+    }
 
-      menuBtn.addEventListener('click', openMenu);
-      closeBtn.addEventListener('click', closeMenu);
-      overlay.addEventListener('click', (e) => { if (e.target === overlay) closeMenu(); });
-      document.querySelectorAll('[data-close]').forEach(el => el.addEventListener('click', () => closeMenu()));
-      document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && overlay.classList.contains('open')) closeMenu(); });
+    menuBtn.addEventListener('click', openMenu);
+    closeBtn.addEventListener('click', closeMenu);
+    overlay.addEventListener('click', (e) => { if (e.target === overlay) closeMenu(); });
+    document.querySelectorAll('[data-close]').forEach(el => el.addEventListener('click', () => closeMenu()));
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && overlay.classList.contains('open')) closeMenu(); });
 
-      const items = document.querySelectorAll('.reveal');
-      const io = new IntersectionObserver((entries) => {
-        entries.forEach(ent => {
-          if (ent.isIntersecting) {
-            ent.target.classList.add('is-in');
-            io.unobserve(ent.target);
-          }
-        });
-      }, { threshold: 0.12 });
-      items.forEach(el => io.observe(el));
-    })();
+    const items = document.querySelectorAll('.reveal');
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(ent => {
+        if (ent.isIntersecting) {
+          ent.target.classList.add('is-in');
+          io.unobserve(ent.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    items.forEach(el => io.observe(el));
+    ;
   </script>
 </body>
 
